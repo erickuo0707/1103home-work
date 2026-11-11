@@ -274,7 +274,15 @@ function renderRecipes() {
   }
 
   const visibleRecipes = getVisibleRecipes();
-  grid.innerHTML = visibleRecipes.map(recipeCard).join("");
+  let previousGroup = "";
+  grid.innerHTML = visibleRecipes.map((recipe, index) => {
+    const group = recipe.category === "甜點" ? "甜點" : "飲品";
+    const heading = group !== previousGroup
+      ? `<div class="recipe-group-heading"><h3>${group}</h3><span>${group === "甜點" ? "SWEETS" : "DRINKS"}</span></div>`
+      : "";
+    previousGroup = group;
+    return heading + recipeCard(recipe, index);
+  }).join("");
 
   const categoryLabel = selectedCategory === "全部" ? "全部類別" : `「${selectedCategory}」`;
   resultCount.textContent = query

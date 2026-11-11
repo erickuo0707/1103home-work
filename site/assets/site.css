@@ -1122,6 +1122,29 @@ button {
   gap: 26px;
 }
 
+.recipe-group-heading {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 8px 0 -8px;
+  padding: 2px 0;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.recipe-group-heading h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.1rem;
+  letter-spacing: .08em;
+}
+
+.recipe-group-heading span {
+  color: var(--muted);
+  font-size: .7rem;
+  letter-spacing: .18em;
+}
+
 .recipe-card {
   position: relative;
   min-width: 0;
