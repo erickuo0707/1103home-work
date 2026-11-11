@@ -23,7 +23,64 @@ function escapeHTML(value) {
   })[character]);
 }
 
-function categoryIllustration(category) {
+function isPendingText(text) {
+  return /(待確認|待補|未記錄)/.test(String(text));
+}
+
+function recipeHasPendingItems(recipe) {
+  if (isPendingText(recipe.time) || isPendingText(recipe.yield)) return true;
+  return (recipe.ingredients || []).some((ing) => isPendingText(ing.amount) || isPendingText(ing.name));
+}
+
+function recipeIllustration(recipe) {
+  const slug = recipe.slug || "";
+  const category = recipe.category || "";
+
+  if (slug === "basque-cheesecake") {
+    return `
+      <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
+        <ellipse cx="44" cy="69" rx="30" ry="6" fill="#e5d5be" stroke="#3b2316" stroke-width="1.8"/>
+        <path d="M22 36c0-7 10-12 22-12s22 5 22 12v24c0 6-10 10-22 10s-22-4-22-10V36Z" fill="#f2d399" stroke="#3b2316" stroke-width="2.2"/>
+        <ellipse cx="44" cy="36" rx="22" ry="10" fill="#6b3418" stroke="#3b2316" stroke-width="2"/>
+        <path d="M31 35c5-3 18-3 25 1" stroke="#b87442" stroke-width="2" stroke-linecap="round"/>
+        <path d="M26 44c4 8 8 12 18 12s14-4 18-12" stroke="#fcf6ea" stroke-width="2" stroke-linecap="round"/>
+      </svg>`;
+  }
+
+  if (slug === "matcha-basque-cheesecake") {
+    return `
+      <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
+        <ellipse cx="44" cy="69" rx="30" ry="6" fill="#dfe4d5" stroke="#3b2316" stroke-width="1.8"/>
+        <path d="m19 50 28-22 23 18-27 23-24-19Z" fill="#7c8f68" stroke="#3b2316" stroke-width="2.2" stroke-linejoin="round"/>
+        <path d="M19 50v9l24 14v-9L19 50Zm24 14 27-18v9L43 73v-9Z" fill="#5e704c" stroke="#3b2316" stroke-width="2.2" stroke-linejoin="round"/>
+        <path d="m23 48 24-18 17 13-23 18-18-13Z" fill="#6b3a1e" stroke="#3b2316" stroke-width="1.8" stroke-linejoin="round"/>
+        <path d="M35 55c5 2 10 1 15-2" stroke="#dce3d2" stroke-width="2" stroke-linecap="round"/>
+      </svg>`;
+  }
+
+  if (slug === "creme-brulee") {
+    return `
+      <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
+        <ellipse cx="44" cy="67" rx="29" ry="5" fill="#e5d5be" stroke="#3b2316" stroke-width="1.8"/>
+        <path d="M20 42h48l-4 19a6 6 0 0 1-6 5H30a6 6 0 0 1-6-5l-4-19Z" fill="#fcf8f1" stroke="#3b2316" stroke-width="2.2"/>
+        <path d="M26 48v12m6-12v12m6-12v12m6-12v12m6-12v12m6-12v12" stroke="#d9cbb7" stroke-width="1.6" stroke-linecap="round"/>
+        <ellipse cx="44" cy="42" rx="24" ry="7" fill="#f3cf85" stroke="#3b2316" stroke-width="2"/>
+        <ellipse cx="44" cy="42" rx="18" ry="4.5" fill="#8f491e"/>
+        <path d="M54 24 43 40" stroke="#3b2316" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>`;
+  }
+
+  if (slug === "chocolate-financier") {
+    return `
+      <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
+        <ellipse cx="44" cy="68" rx="31" ry="6" fill="#eadfcd" stroke="#3b2316" stroke-width="1.8"/>
+        <path d="m20 49 10-15h28l10 15-6 13H26l-6-13Z" fill="#5a331d" stroke="#3b2316" stroke-width="2.2" stroke-linejoin="round"/>
+        <path d="m28 36 4-5h24l4 5H28Z" fill="#7a4424" stroke="#3b2316" stroke-width="2" stroke-linejoin="round"/>
+        <path d="M33 34h22" stroke="#e2b079" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M27 50h34" stroke="#8c5432" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>`;
+  }
+
   switch (category) {
     case "手沖":
       return `
@@ -80,10 +137,21 @@ function categoryIllustration(category) {
 }
 
 function scaleAmountText(amount, factor) {
-  if (factor === 1) return amount;
-  return String(amount).replace(/\d+(?:\.\d+)?/g, (match) => {
-    const num = parseFloat(match) * factor;
-    return Number.isInteger(num) ? String(num) : num.toFixed(1).replace(/\.0$/, "");
+  if (factor === 1) return String(amount);
+  const raw = String(amount);
+  // Avoid scaling temperatures (e.g. "約 80°C") or quoted raw codes (e.g. "「80」")
+  if (raw.includes("°C") || raw.includes("「")) return raw;
+
+  return raw.replace(/\d[\d,]*(?:\.\d+)?/g, (match) => {
+    const clean = match.replace(/,/g, "");
+    const num = parseFloat(clean) * factor;
+    if (Number.isNaN(num)) return match;
+    const hasComma = match.includes(",") || num >= 1000;
+    if (Number.isInteger(num)) {
+      return hasComma ? num.toLocaleString("en-US") : String(num);
+    }
+    const rounded = Number(num.toFixed(1));
+    return hasComma ? rounded.toLocaleString("en-US") : String(rounded);
   });
 }
 
@@ -106,30 +174,40 @@ function updateCategoryCounts() {
 function recipeCard(recipe, index) {
   const accent = ["rose", "sage", "cream"].includes(recipe.accent) ? recipe.accent : "cream";
   const menuNo = `NO.${String(index + 1).padStart(2, "0")}`;
+  const isDessert = recipe.category === "甜點";
+  const hasPending = recipeHasPendingItems(recipe);
+  const totalIngredients = (recipe.ingredients || []).length;
   const previewIngredients = (recipe.ingredients || [])
     .slice(0, 3)
-    .map((ing) => `<span class="card-ingredient-pill">${escapeHTML(ing.name)}</span>`)
+    .map((ing) => `<span class="card-ingredient-pill">${escapeHTML(ing.name.replace(/（.*?）/g, ""))}</span>`)
     .join("");
+  const extraCount = totalIngredients > 3 ? `<span class="card-ingredient-pill is-more">+${totalIngredients - 3}</span>` : "";
 
   return `
     <article class="recipe-card accent-${accent}" style="--card-index:${index}" data-recipe="${escapeHTML(recipe.slug)}">
       <div class="card-art" aria-hidden="true">
         <span class="card-art-label">${escapeHTML(recipe.category)}</span>
-        <span class="card-art-yield">${menuNo} · ${escapeHTML(recipe.yield)}</span>
+        <span class="card-art-yield">${menuNo}</span>
         <span class="card-orbit orbit-one"></span><span class="card-orbit orbit-two"></span>
-        ${categoryIllustration(recipe.category)}
+        ${recipeIllustration(recipe)}
         <span class="card-art-mark">${escapeHTML(recipe.title.slice(0, 1))}</span>
       </div>
       <div class="card-body">
         <div class="card-meta">
-          <span>☕ ${escapeHTML(recipe.time)}</span>
+          <span class="${isPendingText(recipe.time) ? "meta-pending" : ""}">${isDessert ? "⏲" : "☕"} ${escapeHTML(recipe.time)}</span>
           <span class="card-meta-dot" aria-hidden="true">·</span>
           <span>難度：${escapeHTML(recipe.level)}</span>
+          ${hasPending ? `<span class="card-status-tag" title="部分比例或烤溫待實測確認">試作筆記</span>` : ""}
         </div>
         <h3>${escapeHTML(recipe.title)}</h3>
         <p>${escapeHTML(recipe.summary)}</p>
-        <div class="card-ingredients-preview" aria-label="主要材料">${previewIngredients}</div>
-        <button class="card-open" type="button" data-recipe="${escapeHTML(recipe.slug)}" aria-label="查看${escapeHTML(recipe.title)}配方明細">點選這份配方與比例 <span aria-hidden="true">↗</span></button>
+        <div class="card-ingredients-preview" aria-label="主要材料">
+          ${previewIngredients}${extraCount}
+        </div>
+        <div class="card-footer-row">
+          <span class="card-yield-text">${escapeHTML(recipe.yield)}</span>
+          <button class="card-open" type="button" data-recipe="${escapeHTML(recipe.slug)}" aria-label="查看${escapeHTML(recipe.title)}配方明細">查看配方單 <span aria-hidden="true">↗</span></button>
+        </div>
       </div>
     </article>`;
 }
@@ -170,17 +248,21 @@ function renderDialogContent(recipe, scale = 1) {
   const currentIndex = recipes.findIndex((item) => item.slug === recipe.slug);
   const prevRecipe = recipes[(currentIndex - 1 + recipes.length) % recipes.length];
   const nextRecipe = recipes[(currentIndex + 1) % recipes.length];
+  const hasPending = recipeHasPendingItems(recipe);
 
   dialogContent.innerHTML = `
     <div class="dialog-header-band accent-${accent}">
-      <p class="eyebrow">${escapeHTML(recipe.category)} <span>／ ${escapeHTML(recipe.time)}</span></p>
+      <div class="dialog-kicker-row">
+        <p class="eyebrow">${escapeHTML(recipe.category)} <span>／ ${escapeHTML(recipe.time)}</span></p>
+        ${hasPending ? `<span class="dialog-pending-pill">📝 試作紀錄（部分參數待補）</span>` : `<span class="dialog-ready-pill">✓ 起始配方已建立</span>`}
+      </div>
       <h2 id="dialog-title">${escapeHTML(recipe.title)}</h2>
       <p class="dialog-summary">${escapeHTML(recipe.summary)}</p>
       <div class="dialog-facts">
         <div class="dialog-badges">
           <span>份量：${escapeHTML(scaleAmountText(recipe.yield, scale))}</span>
           <span>難度：${escapeHTML(recipe.level)}</span>
-          <span>時間：${escapeHTML(recipe.time)}</span>
+          <span class="${isPendingText(recipe.time) ? "is-pending-badge" : ""}">時間：${escapeHTML(recipe.time)}</span>
         </div>
         <div class="serving-scaler" role="group" aria-label="調整配方份量">
           <span class="scaler-label">份量換算</span>
@@ -196,31 +278,39 @@ function renderDialogContent(recipe, scale = 1) {
     <div class="dialog-body">
       <section class="dialog-section">
         <div class="dialog-section-header">
-          <h3>準備材料</h3>
-          <span class="dialog-hint">點擊項目可標記已備妥</span>
+          <h3>準備材料（共 ${recipe.ingredients.length} 項）</h3>
+          <span class="dialog-hint">點擊項目可打勾備料</span>
         </div>
         <ul class="ingredient-list">
           ${recipe.ingredients
-            .map(
-              (item) => `
-            <li role="checkbox" aria-checked="false" tabindex="0">
+            .map((item) => {
+              const scaledAmount = scaleAmountText(item.amount, scale);
+              const pendingAmount = isPendingText(item.amount) || isPendingText(item.name);
+              return `
+            <li role="checkbox" aria-checked="false" tabindex="0" class="${pendingAmount ? "has-pending-amount" : ""}">
               <span class="ingredient-check" aria-hidden="true">✓</span>
-              <span class="ingredient-amount">${escapeHTML(scaleAmountText(item.amount, scale))}</span>
-              <span>${escapeHTML(item.name)}</span>
-            </li>`
-            )
+              <span class="ingredient-name">${escapeHTML(item.name)}</span>
+              <span class="ingredient-amount ${pendingAmount ? "is-pending" : ""}">${escapeHTML(scaledAmount)}</span>
+            </li>`;
+            })
             .join("")}
         </ul>
       </section>
       <section class="dialog-section">
         <div class="dialog-section-header">
-          <h3>製作步驟</h3>
+          <h3>製作與沖煮步驟</h3>
         </div>
         <ol class="instruction-list">
           ${recipe.steps.map((step) => `<li>${escapeHTML(step)}</li>`).join("")}
         </ol>
       </section>
-      <p class="recipe-note"><span aria-hidden="true">✳</span><span>${escapeHTML(recipe.note)}</span></p>
+      <div class="recipe-note ${hasPending ? "is-pending-note" : ""}">
+        <span aria-hidden="true">${hasPending ? "⚠" : "✳"}</span>
+        <div>
+          <strong>${hasPending ? "試作待確認提醒" : "吧台調整筆記"}</strong>
+          <p>${escapeHTML(recipe.note)}</p>
+        </div>
+      </div>
       ${
         recipes.length > 1
           ? `<div class="dialog-footer-nav">
