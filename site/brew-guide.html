@@ -7,6 +7,7 @@
   <meta name="description" content="從粉水比、悶蒸到分段注水，建立一份可以反覆調整的手沖咖啡筆記。">
   <title>手沖入門筆記｜萃光咖啡筆記</title>
   <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳到主要內容</a>
@@ -30,7 +31,7 @@
         <h1 id="guide-title">先讓手沖，<br><em>變成可重複的流程。</em></h1>
         <p>不用追求一次沖出完美答案。先固定幾個起始參數，再練習辨認每一個改變帶來的差異。</p>
       </div>
-      <div class="guide-stamp" aria-hidden="true"><span>15 g</span><i>＋</i><span>225 g</span><small>COFFEE / WATER</small></div>
+      <div class="guide-stamp" aria-hidden="true"><span id="stamp-coffee">15 g</span><i>＋</i><span id="stamp-water">225 g</span><small>COFFEE / WATER</small></div>
     </section>
 
     <section class="guide-content shell" aria-label="手沖流程">
@@ -57,15 +58,43 @@
         </div>
       </div>
       <aside class="guide-aside">
-        <p class="eyebrow">KEEP A SMALL LOG</p>
-        <h3>一杯記四件事</h3>
-        <ol class="log-list">
-          <li><span>01</span>豆子與烘焙日期</li>
-          <li><span>02</span>粉水量與水溫</li>
-          <li><span>03</span>研磨度與總時間</li>
-          <li><span>04</span>喝起來的風味印象</li>
-        </ol>
-        <div class="aside-note"><span aria-hidden="true">✳</span><p>描述可以很簡單：「入口明亮、尾韻偏乾」。先記下自己的感覺，就能慢慢建立比較基準。</p></div>
+        <div class="aside-card" aria-labelledby="calc-title">
+          <p class="eyebrow">RATIO HELPER</p>
+          <h3 id="calc-title">起始粉水比試算</h3>
+          <div class="ratio-calc">
+            <div class="calc-row">
+              <label for="calc-coffee">咖啡粉量 <strong id="calc-coffee-val">15 g</strong></label>
+              <input id="calc-coffee" type="range" min="10" max="30" step="1" value="15">
+            </div>
+            <div class="calc-row">
+              <label for="calc-ratio">起始粉水比 <strong id="calc-ratio-val">1 : 15</strong></label>
+              <input id="calc-ratio" type="range" min="13" max="18" step="0.5" value="15">
+            </div>
+            <div class="calc-results" aria-live="polite">
+              <div class="calc-stat">
+                <small>建議悶蒸水量</small>
+                <strong id="calc-bloom">35 g</strong>
+              </div>
+              <div class="calc-stat">
+                <small>目標總注水量</small>
+                <strong id="calc-total">225 g</strong>
+              </div>
+            </div>
+          </div>
+          <div class="aside-note"><span aria-hidden="true">✳</span><p>以上為練習用起始比例，實際水量可依烘焙度與個人濃淡偏好微調。</p></div>
+        </div>
+
+        <div class="aside-card">
+          <p class="eyebrow">KEEP A SMALL LOG</p>
+          <h3>一杯記四件事</h3>
+          <ol class="log-list">
+            <li><span>01</span>豆子與烘焙日期</li>
+            <li><span>02</span>粉水量與水溫</li>
+            <li><span>03</span>研磨度與總時間</li>
+            <li><span>04</span>喝起來的風味印象</li>
+          </ol>
+          <div class="aside-note"><span aria-hidden="true">✳</span><p>描述可以很簡單：「入口明亮、尾韻偏乾」。先記下自己的感覺，就能慢慢建立比較基準。</p></div>
+        </div>
       </aside>
     </section>
 

@@ -70,7 +70,8 @@
         <label class="search-box">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
           <span class="visually-hidden">搜尋配方</span>
-          <input id="recipe-search" type="search" placeholder="搜尋風味或配方名稱…" autocomplete="off">
+          <input id="recipe-search" type="search" placeholder="搜尋風味、材料或配方名稱…" autocomplete="off">
+          <button id="search-clear" class="search-clear" type="button" aria-label="清除搜尋條件" hidden>×</button>
           <kbd>/</kbd>
         </label>
         <div class="filter-list" role="group" aria-label="配方分類">
@@ -82,12 +83,15 @@
         </div>
       </div>
 
-      <p class="results-count" id="results-count" aria-live="polite">正在整理配方…</p>
+      <div class="results-bar">
+        <p class="results-count" id="results-count" aria-live="polite">正在整理配方…</p>
+      </div>
       <div class="recipe-grid" id="recipe-grid" aria-live="polite"></div>
       <div class="empty-state" id="empty-state" hidden>
         <span aria-hidden="true">☕</span>
         <h3>還沒找到這杯。</h3>
         <p>試著換個關鍵字，或切回「全部」看看。</p>
+        <button id="reset-filters" class="button button-outline" type="button">顯示全部配方</button>
       </div>
     </section>
 
