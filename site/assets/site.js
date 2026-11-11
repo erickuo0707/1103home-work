@@ -28,51 +28,53 @@ function categoryIllustration(category) {
     case "手沖":
       return `
         <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
-          <path d="M22 22h44l-14 26h-16L22 22Z" fill="#faf8f2" stroke="#3f5041" stroke-width="2.2" stroke-linejoin="round"/>
-          <path d="M62 26h6a5 5 0 0 1 0 10h-9" stroke="#3f5041" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M26 48h36M31 48l-4 22a4 4 0 0 0 4 4h26a4 4 0 0 0 4-4l-4-22" fill="#f3efe4" stroke="#3f5041" stroke-width="2.2" stroke-linejoin="round"/>
-          <path d="M31 62c8 3 18 3 26 0" stroke="#b66d52" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M38 15c-2-4 2-5 0-9m12 9c-2-4 2-5 0-9" stroke="#697963" stroke-width="2" stroke-linecap="round"/>
+          <path d="M22 22h44l-14 26h-16L22 22Z" fill="#fcf8f1" stroke="#3b2316" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M62 26h6a5 5 0 0 1 0 10h-9" stroke="#3b2316" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M26 48h36M31 48l-4 22a4 4 0 0 0 4 4h26a4 4 0 0 0 4-4l-4-22" fill="#f5ead8" stroke="#3b2316" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M29 60h30l-2 10a3 3 0 0 1-3 2H34a3 3 0 0 1-3-2l-2-10Z" fill="#7a4424"/>
+          <path d="M31 60c8 3 18 3 26 0" stroke="#c89464" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M38 15c-2-4 2-5 0-9m12 9c-2-4 2-5 0-9" stroke="#9c5e35" stroke-width="2" stroke-linecap="round"/>
         </svg>`;
     case "特調":
       return `
         <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
-          <path d="M27 20h34l-3 46a8 8 0 0 1-8 7H38a8 8 0 0 1-8-7l-3-46Z" fill="#faf8f2" stroke="#3f5041" stroke-width="2.2"/>
-          <path d="M29 36c10 4 20 4 30 0" stroke="#b66d52" stroke-width="2.2" stroke-linecap="round"/>
-          <circle cx="58" cy="20" r="9" fill="#eedcd3" stroke="#b66d52" stroke-width="2"/>
-          <rect x="35" y="42" width="8" height="8" rx="1.5" transform="rotate(-10 35 42)" stroke="#697963" stroke-width="1.8"/>
-          <rect x="46" y="48" width="8" height="8" rx="1.5" transform="rotate(12 46 48)" stroke="#697963" stroke-width="1.8"/>
-          <path d="M48 12l-6 26" stroke="#3f5041" stroke-width="2" stroke-linecap="round"/>
+          <path d="M27 20h34l-3 46a8 8 0 0 1-8 7H38a8 8 0 0 1-8-7l-3-46Z" fill="#fcf8f1" stroke="#3b2316" stroke-width="2.2"/>
+          <path d="M28 28h32l-1 14H29l-1-14Z" fill="#6b3a1e"/>
+          <path d="M29 42h30l-2 24a6 6 0 0 1-6 5H37a6 6 0 0 1-6-5l-2-24Z" fill="#e8b89a"/>
+          <circle cx="58" cy="20" r="9" fill="#f4d5c6" stroke="#b35a42" stroke-width="2"/>
+          <rect x="35" y="45" width="8" height="8" rx="1.5" transform="rotate(-10 35 45)" fill="#fcf8f1" stroke="#9c5e35" stroke-width="1.6"/>
+          <rect x="46" y="50" width="8" height="8" rx="1.5" transform="rotate(12 46 50)" fill="#fcf8f1" stroke="#9c5e35" stroke-width="1.6"/>
+          <path d="M48 12l-6 26" stroke="#3b2316" stroke-width="2" stroke-linecap="round"/>
         </svg>`;
     case "甜點":
       return `
         <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
-          <ellipse cx="45" cy="70" rx="29" ry="5" stroke="#a8a18e" stroke-width="1.8"/>
-          <path d="m18 50 29-23 24 19-28 24-25-20Z" fill="#e9c98f" stroke="#3f5041" stroke-width="2.2" stroke-linejoin="round"/>
-          <path d="M18 50v9l25 15v-9L18 50Zm25 15 28-19v9L43 74v-9Z" fill="#c58b5f" stroke="#3f5041" stroke-width="2.2" stroke-linejoin="round"/>
-          <path d="m24 49 23-18 17 14-23 18-17-14Z" fill="#f8f1df" stroke="#3f5041" stroke-width="1.8" stroke-linejoin="round"/>
-          <path d="M28 46c7-6 13-11 20-15 5 4 10 8 15 13" stroke="#b66d52" stroke-width="2.5" stroke-linecap="round"/>
-          <circle cx="48" cy="33" r="4" fill="#b66d52"/>
-          <path d="M48 29c-2-3-5-3-6-2m10 4c3-3 5-2 6-1" stroke="#697963" stroke-width="1.8" stroke-linecap="round"/>
+          <ellipse cx="45" cy="70" rx="29" ry="5" stroke="#9c5e35" stroke-width="1.8"/>
+          <path d="m18 50 29-23 24 19-28 24-25-20Z" fill="#f0d39d" stroke="#3b2316" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M18 50v9l25 15v-9L18 50Zm25 15 28-19v9L43 74v-9Z" fill="#c48352" stroke="#3b2316" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="m24 49 23-18 17 14-23 18-17-14Z" fill="#fcf6ea" stroke="#3b2316" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M28 46c7-6 13-11 20-15 5 4 10 8 15 13" stroke="#b35a42" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="48" cy="33" r="4" fill="#b35a42"/>
+          <path d="M48 29c-2-3-5-3-6-2m10 4c3-3 5-2 6-1" stroke="#7a4424" stroke-width="1.8" stroke-linecap="round"/>
         </svg>`;
     case "冰咖啡":
       return `
         <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
-          <path d="M26 22h36l-4 44a7 7 0 0 1-7 6H37a7 7 0 0 1-7-6l-4-44Z" fill="#faf8f2" stroke="#3f5041" stroke-width="2.2"/>
-          <path d="M28 34h32" stroke="#b66d52" stroke-width="2" stroke-linecap="round"/>
-          <rect x="33" y="39" width="10" height="10" rx="2" transform="rotate(-8 33 39)" fill="#e6e2d4" stroke="#3f5041" stroke-width="1.8"/>
-          <rect x="45" y="44" width="10" height="10" rx="2" transform="rotate(10 45 44)" fill="#e6e2d4" stroke="#3f5041" stroke-width="1.8"/>
-          <circle cx="38" cy="60" r="2" fill="#697963"/>
-          <circle cx="48" cy="59" r="1.5" fill="#b66d52"/>
+          <path d="M26 22h36l-4 44a7 7 0 0 1-7 6H37a7 7 0 0 1-7-6l-4-44Z" fill="#fcf8f1" stroke="#3b2316" stroke-width="2.2"/>
+          <path d="M28 33h32l-3 33a5 5 0 0 1-5 4H36a5 5 0 0 1-5-4l-3-33Z" fill="#6b3c21"/>
+          <path d="M28 33h32" stroke="#c89464" stroke-width="2.5" stroke-linecap="round"/>
+          <rect x="33" y="39" width="10" height="10" rx="2" transform="rotate(-8 33 39)" fill="#f7efe2" stroke="#3b2316" stroke-width="1.6"/>
+          <rect x="45" y="44" width="10" height="10" rx="2" transform="rotate(10 45 44)" fill="#f7efe2" stroke="#3b2316" stroke-width="1.6"/>
         </svg>`;
     default:
       return `
         <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
-          <path d="M21 30h38v19a17 17 0 0 1-17 17h-4a17 17 0 0 1-17-17V30Z" fill="#faf8f2" stroke="#3f5041" stroke-width="2.2"/>
-          <path d="M59 36h6a6 6 0 0 1 0 12h-7" stroke="#3f5041" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M26 40c8 4 18 4 28 0" stroke="#b66d52" stroke-width="2.2" stroke-linecap="round"/>
-          <path d="M34 22c-2-4 2-5 0-9m12 9c-2-4 2-5 0-9" stroke="#697963" stroke-width="2" stroke-linecap="round"/>
-          <path d="M18 68h44" stroke="#3f5041" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M21 30h38v19a17 17 0 0 1-17 17h-4a17 17 0 0 1-17-17V30Z" fill="#fcf8f1" stroke="#3b2316" stroke-width="2.2"/>
+          <path d="M59 36h6a6 6 0 0 1 0 12h-7" stroke="#3b2316" stroke-width="2.2" stroke-linecap="round"/>
+          <ellipse cx="40" cy="31" rx="18" ry="4" fill="#9c5e35" stroke="#3b2316" stroke-width="1.8"/>
+          <path d="M33 43c3-4 7-5 7-1 0-4 4-3 7 1 1 5-7 9-7 9s-8-4-7-9Z" fill="#9c5e35"/>
+          <path d="M34 22c-2-4 2-5 0-9m12 9c-2-4 2-5 0-9" stroke="#9c5e35" stroke-width="2" stroke-linecap="round"/>
+          <path d="M18 68h44" stroke="#3b2316" stroke-width="2.4" stroke-linecap="round"/>
         </svg>`;
   }
 }
@@ -103,6 +105,7 @@ function updateCategoryCounts() {
 
 function recipeCard(recipe, index) {
   const accent = ["rose", "sage", "cream"].includes(recipe.accent) ? recipe.accent : "cream";
+  const menuNo = `NO.${String(index + 1).padStart(2, "0")}`;
   const previewIngredients = (recipe.ingredients || [])
     .slice(0, 3)
     .map((ing) => `<span class="card-ingredient-pill">${escapeHTML(ing.name)}</span>`)
@@ -112,21 +115,21 @@ function recipeCard(recipe, index) {
     <article class="recipe-card accent-${accent}" style="--card-index:${index}" data-recipe="${escapeHTML(recipe.slug)}">
       <div class="card-art" aria-hidden="true">
         <span class="card-art-label">${escapeHTML(recipe.category)}</span>
-        <span class="card-art-yield">${escapeHTML(recipe.yield)}</span>
+        <span class="card-art-yield">${menuNo} · ${escapeHTML(recipe.yield)}</span>
         <span class="card-orbit orbit-one"></span><span class="card-orbit orbit-two"></span>
         ${categoryIllustration(recipe.category)}
         <span class="card-art-mark">${escapeHTML(recipe.title.slice(0, 1))}</span>
       </div>
       <div class="card-body">
         <div class="card-meta">
-          <span>⏱ ${escapeHTML(recipe.time)}</span>
+          <span>☕ ${escapeHTML(recipe.time)}</span>
           <span class="card-meta-dot" aria-hidden="true">·</span>
           <span>難度：${escapeHTML(recipe.level)}</span>
         </div>
         <h3>${escapeHTML(recipe.title)}</h3>
         <p>${escapeHTML(recipe.summary)}</p>
         <div class="card-ingredients-preview" aria-label="主要材料">${previewIngredients}</div>
-        <button class="card-open" type="button" data-recipe="${escapeHTML(recipe.slug)}" aria-label="查看${escapeHTML(recipe.title)}配方明細">查看完整配方與比例 <span aria-hidden="true">↗</span></button>
+        <button class="card-open" type="button" data-recipe="${escapeHTML(recipe.slug)}" aria-label="查看${escapeHTML(recipe.title)}配方明細">點選這份配方與比例 <span aria-hidden="true">↗</span></button>
       </div>
     </article>`;
 }
