@@ -1,6 +1,6 @@
 :root {
   color-scheme: light;
-  /* 溫暖拿鐵奶泡與羊皮紙底色 */
+  /* 溫暖拿鐵奶泡與羊皮紙底色（Specialty Café Warmth） */
   --paper: #f6efe4;
   --paper-elevated: #fcf8f1;
   --paper-deep: #eadfcd;
@@ -10,25 +10,30 @@
   --ink-soft: #463024;
   --muted: #6e5849;
   --muted-light: #947d6c;
-  /* 細線與木質邊框 */
+  /* 細線與木質邊框（Frames X / Untitled UI 結構線條） */
   --line: #d9cbb7;
   --line-strong: #bfa98e;
   /* 咖啡油脂焦糖、深焙胡桃木與果韻鼠尾草點綴 */
-  --espresso: #2c1b12;
+  --espresso: #281810;
   --roast: #4e3121;
   --caramel: #9c5e35;
   --crema: #c89464;
   --green: #687860;
-  --green-dark: #4a3021;
-  --green-tint: #efe5d6;
+  --green-dark: #3f5041;
+  --green-tint: #e7ece1;
   --berry: #b35a42;
-  --berry-tint: #f2dfd7;
+  --berry-tint: #f4e2da;
   --cream-tint: #efe3d0;
-  --shadow-sm: 0 6px 20px rgba(44, 27, 18, 0.06);
-  --shadow-md: 0 16px 38px rgba(44, 27, 18, 0.12);
-  --shadow-lg: 0 30px 84px rgba(28, 17, 11, 0.34);
-  --radius-sm: 6px;
-  --radius-md: 12px;
+  /* Untitled UI / Koala UI 多層次柔和陰影與圓角系統 */
+  --shadow-xs: 0 1px 2px rgba(36, 23, 17, 0.06), 0 1px 3px rgba(36, 23, 17, 0.04);
+  --shadow-sm: 0 4px 12px -2px rgba(36, 23, 17, 0.07), 0 2px 6px -1px rgba(36, 23, 17, 0.04);
+  --shadow-md: 0 16px 36px -6px rgba(36, 23, 17, 0.13), 0 6px 14px -4px rgba(36, 23, 17, 0.07);
+  --shadow-lg: 0 28px 72px -12px rgba(24, 14, 9, 0.36), 0 10px 24px -6px rgba(24, 14, 9, 0.18);
+  --ring-focus: 0 0 0 4px rgba(156, 94, 53, 0.2);
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
   --serif: "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
   --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
 }
@@ -49,8 +54,8 @@ body {
     radial-gradient(circle at 88% 20%, rgba(78, 49, 33, 0.07), transparent 48%),
     repeating-linear-gradient(
       0deg,
-      rgba(70, 48, 36, 0.012) 0px,
-      rgba(70, 48, 36, 0.012) 1px,
+      rgba(70, 48, 36, 0.011) 0px,
+      rgba(70, 48, 36, 0.011) 1px,
       transparent 1px,
       transparent 4px
     );
@@ -110,51 +115,388 @@ button {
   transform: translateY(0);
 }
 
-/* Header & Café Signboard Navigation */
+/* ==========================================================================
+   PulsoIcon (CityPulso/PulsoIcon) 24×24 Animated SVG Icon System
+   ========================================================================== */
+.pulso-icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.85;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  overflow: visible;
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pulso-icon * {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes pi-float {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-2.6px);
+    opacity: 0.55;
+  }
+}
+
+@keyframes pi-press {
+  0%, 100% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(0.92, 0.96) translateY(0.8px);
+  }
+  75% {
+    transform: scale(1.03, 0.99);
+  }
+}
+
+@keyframes pi-wobble {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(-12deg) scale(1.05);
+  }
+  65% {
+    transform: rotate(9deg) scale(1.03);
+  }
+}
+
+@keyframes pi-sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  35% {
+    transform: rotate(-7deg);
+  }
+  70% {
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes pi-swing {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(14deg) translateY(-1px);
+  }
+  75% {
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes pi-jelly {
+  0%, 100% {
+    transform: scale(1, 1);
+  }
+  35% {
+    transform: scale(1.08, 0.92);
+  }
+  65% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+@keyframes pi-grow-x {
+  0% {
+    transform: scaleX(0.45);
+    opacity: 0.5;
+  }
+  60% {
+    transform: scaleX(1.08);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pi-drop {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  45% {
+    transform: translateY(2.2px) scale(0.95, 1.06);
+  }
+  75% {
+    transform: translateY(-1px) scale(1.02, 0.98);
+  }
+}
+
+@keyframes pi-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pi-shoot {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  45% {
+    transform: translate(2.6px, -2.6px);
+  }
+  46% {
+    transform: translate(-2px, 2px);
+    opacity: 0.45;
+  }
+}
+
+@keyframes pi-slide-r {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+}
+
+@keyframes pi-twinkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  45% {
+    transform: scale(1.18) rotate(15deg);
+  }
+  75% {
+    transform: scale(0.92) rotate(-8deg);
+  }
+}
+
+/* Trigger PulsoIcon sub-element animations on interactive parent hover/focus */
+:is(
+  a,
+  button,
+  .roast-tag,
+  .recipe-card,
+  .method-step,
+  .brew-step,
+  .art-stamp,
+  .about-mark
+):is(:hover, :focus-visible) .pi-float-1 {
+  animation: pi-float 0.65s ease-in-out infinite;
+}
+
+:is(
+  a,
+  button,
+  .roast-tag,
+  .recipe-card,
+  .method-step,
+  .brew-step,
+  .art-stamp,
+  .about-mark
+):is(:hover, :focus-visible) .pi-float-2 {
+  animation: pi-float 0.65s ease-in-out 0.12s infinite;
+}
+
+:is(
+  a,
+  button,
+  .roast-tag,
+  .recipe-card,
+  .method-step,
+  .brew-step,
+  .art-stamp,
+  .about-mark
+):is(:hover, :focus-visible) .pi-float-3 {
+  animation: pi-float 0.65s ease-in-out 0.24s infinite;
+}
+
+:is(
+  a,
+  button,
+  .roast-tag,
+  .recipe-card,
+  .method-step,
+  .brew-step,
+  .art-stamp
+):is(:hover, :focus-visible) .pi-press {
+  animation: pi-press 0.52s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:is(
+  a,
+  button,
+  .roast-tag,
+  .recipe-card,
+  .about-mark,
+  .aside-note
+):is(:hover, :focus-visible) .pi-wobble {
+  animation: pi-wobble 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:is(
+  a,
+  button,
+  .filter-chip,
+  .recipe-card,
+  .method-step,
+  .brew-step
+):is(:hover, :focus-visible) .pi-sway {
+  animation: pi-sway 0.56s ease-in-out;
+}
+
+:is(
+  a,
+  button,
+  .filter-chip,
+  .recipe-card
+):is(:hover, :focus-visible) .pi-swing {
+  animation: pi-swing 0.56s ease-in-out;
+}
+
+:is(
+  a,
+  button,
+  .roast-tag,
+  .filter-chip,
+  .recipe-card
+):is(:hover, :focus-visible) .pi-jelly {
+  animation: pi-jelly 0.54s ease-in-out;
+}
+
+:is(
+  a,
+  button,
+  .roast-tag,
+  .filter-chip,
+  .recipe-card
+):is(:hover, :focus-visible) .pi-grow-x {
+  animation: pi-grow-x 0.48s ease-out;
+}
+
+:is(
+  a,
+  button,
+  .filter-chip,
+  .recipe-card,
+  .brew-step
+):is(:hover, :focus-visible) .pi-drop-1 {
+  animation: pi-drop 0.58s ease-in-out;
+}
+
+:is(
+  a,
+  button,
+  .filter-chip,
+  .recipe-card,
+  .brew-step
+):is(:hover, :focus-visible) .pi-drop-2 {
+  animation: pi-drop 0.58s ease-in-out 0.1s;
+}
+
+:is(
+  .recipe-card,
+  .brew-step
+):is(:hover, :focus-visible) .pi-spin {
+  animation: pi-spin 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:is(
+  a,
+  button,
+  .recipe-card,
+  .method-step
+):is(:hover, :focus-visible) .pi-shoot {
+  animation: pi-shoot 0.48s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:is(a, button):is(:hover, :focus-visible) .pi-slide-r {
+  animation: pi-slide-r 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:is(
+  a,
+  button,
+  .filter-chip,
+  .recipe-card,
+  .brew-step,
+  .hero-art
+):is(:hover, :focus-visible) .pi-twinkle {
+  animation: pi-twinkle 0.6s ease-in-out;
+}
+
+/* ==========================================================================
+   Header & Café Signboard Navigation (Untitled UI / Frames X Glass Bar)
+   ========================================================================== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 30;
-  height: 84px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(246, 239, 228, 0.92);
-  backdrop-filter: blur(12px);
+  background: rgba(246, 239, 228, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-top: 4px solid var(--espresso);
   border-bottom: 1px solid var(--line);
-  padding-inline: max(32px, calc((100% - 1160px) / 2));
   width: 100%;
+}
+
+.site-header.shell {
+  padding-inline: max(32px, calc((100% - 1160px) / 2));
+}
+
+.header-inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  transition: opacity 0.18s ease;
+  gap: 13px;
+  transition: transform 0.18s ease, opacity 0.18s ease;
 }
 
 .brand:hover {
-  opacity: 0.88;
+  opacity: 0.92;
 }
 
 .brand-mark {
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   border: 1.5px solid var(--roast);
-  border-radius: 50%;
+  border-radius: 12px;
   background: var(--espresso);
-  box-shadow: inset 0 0 0 2.5px var(--paper-elevated);
+  color: #f6e7d4;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    var(--shadow-xs);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.brand:hover .brand-mark {
+  transform: translateY(-1px);
+  background: var(--roast);
 }
 
 .brand-mark svg {
-  width: 25px;
-  stroke: #f5e6d3;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  width: 21px;
+  height: 21px;
+  stroke: #f6e7d4;
 }
 
 .brand-copy {
@@ -165,74 +507,96 @@ button {
 
 .brand-copy strong {
   font-family: var(--serif);
-  font-size: 22px;
-  letter-spacing: 0.14em;
+  font-size: 21px;
+  letter-spacing: 0.12em;
   font-weight: 600;
   color: var(--espresso);
 }
 
 .brand-copy small {
-  margin-top: 4px;
+  margin-top: 3px;
   font-size: 10px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   color: var(--caramel);
   font-weight: 600;
 }
 
 .main-nav {
   display: flex;
-  gap: 32px;
+  gap: 8px;
   align-items: center;
   font-size: 14px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
 }
 
 .nav-link {
   position: relative;
-  padding: 8px 4px;
-  color: var(--muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  color: var(--ink-soft);
   font-weight: 500;
+  transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.nav-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--caramel);
   transition: color 0.18s ease;
 }
 
-.nav-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 2px;
-  background: var(--caramel);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.22s ease;
-}
-
 .nav-link:hover,
-.nav-link:focus-visible,
-.nav-link.is-current {
+.nav-link:focus-visible {
+  background: rgba(156, 94, 53, 0.1);
   color: var(--espresso);
 }
 
-.nav-link.is-current::after,
-.nav-link:hover::after {
-  transform: scaleX(1);
+.nav-link.is-current {
+  background: var(--paper-elevated);
+  color: var(--espresso);
+  font-weight: 600;
+  box-shadow: var(--shadow-xs), inset 0 0 0 1px var(--line-strong);
 }
 
-/* Hero Section — Specialty Coffee Bar Atmosphere */
+.nav-link.is-current .nav-icon {
+  color: var(--espresso);
+}
+
+/* ==========================================================================
+   Hero Section — Landify / Untitled UI Editorial Split + Specialty Café Bar
+   ========================================================================== */
 .hero {
   min-height: 550px;
   display: grid;
-  grid-template-columns: 1.02fr 0.98fr;
+  grid-template-columns: 1.04fr 0.96fr;
   align-items: center;
   gap: 48px;
-  padding-block: 52px 68px;
+  padding-block: 48px 68px;
 }
 
 .hero-copy {
   position: relative;
   z-index: 1;
-  padding-left: 1%;
+}
+
+/* Untitled UI Pill Badge */
+.eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 13px 5px 10px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--paper-elevated);
+  box-shadow: var(--shadow-xs);
+  color: var(--roast);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
 }
 
 .eyebrow {
@@ -248,11 +612,9 @@ button {
   display: inline-block;
   width: 8px;
   height: 8px;
-  margin-right: 9px;
   background: var(--caramel);
   border-radius: 50%;
-  vertical-align: 1px;
-  box-shadow: 0 0 0 3px rgba(156, 94, 53, 0.18);
+  box-shadow: 0 0 0 3px rgba(156, 94, 53, 0.2);
 }
 
 .hero h1,
@@ -261,9 +623,9 @@ button {
   font-family: var(--serif);
   font-weight: 600;
   letter-spacing: 0.02em;
-  line-height: 1.28;
+  line-height: 1.24;
   color: var(--espresso);
-  font-size: clamp(38px, 4.6vw, 58px);
+  font-size: clamp(38px, 4.6vw, 56px);
 }
 
 .hero h1 em,
@@ -275,84 +637,117 @@ button {
 }
 
 .hero-description {
-  max-width: 460px;
+  max-width: 470px;
   margin: 0;
   color: var(--ink-soft);
   font-size: 16px;
-  line-height: 1.9;
+  line-height: 1.88;
 }
 
+/* Sort UI / Koala UI Feature Chips */
 .hero-roast-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 9px;
   margin-top: 22px;
 }
 
 .roast-tag {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 11px;
+  gap: 7px;
+  padding: 5px 12px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: var(--paper-elevated);
+  box-shadow: var(--shadow-xs);
   color: var(--ink-soft);
   font-size: 12.5px;
+  font-weight: 500;
+  transition: border-color 0.18s ease, transform 0.18s ease, background 0.18s ease;
 }
 
-.roast-bean {
-  display: inline-block;
-  width: 8px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--roast);
-  transform: rotate(25deg);
+.roast-tag .pulso-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--caramel);
+}
+
+.roast-tag:hover {
+  border-color: var(--caramel);
+  background: #fffdf9;
+  transform: translateY(-1px);
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 24px;
+  gap: 14px;
   margin-top: 28px;
 }
 
+/* Untitled UI / Frames X Button System */
 .button {
-  min-height: 48px;
+  min-height: 46px;
   display: inline-flex;
-  gap: 14px;
+  gap: 10px;
   align-items: center;
   justify-content: center;
-  padding: 0 24px;
+  padding: 0 20px;
   border: 1px solid transparent;
   border-radius: var(--radius-sm);
   font-size: 14.5px;
-  font-weight: 500;
-  letter-spacing: 0.05em;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   cursor: pointer;
   transition:
     background 0.2s ease,
     color 0.2s ease,
     border-color 0.2s ease,
-    transform 0.2s ease,
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.2s ease;
 }
 
+.button .pulso-icon {
+  width: 17px;
+  height: 17px;
+}
+
 .button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1.5px);
   box-shadow: var(--shadow-sm);
+}
+
+.button:active {
+  transform: translateY(0);
 }
 
 .button-dark {
   background: var(--espresso);
   color: #fcf7ef;
   border-color: var(--espresso);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    var(--shadow-xs);
 }
 
 .button-dark:hover {
   background: var(--caramel);
   border-color: var(--caramel);
+}
+
+.button-secondary {
+  background: var(--paper-elevated);
+  color: var(--espresso);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-xs);
+}
+
+.button-secondary:hover {
+  border-color: var(--caramel);
+  background: #fffdf9;
+  color: var(--caramel);
 }
 
 .text-link,
@@ -362,7 +757,7 @@ button {
   align-items: center;
   gap: 6px;
   font-size: 14.5px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--roast);
   transition: color 0.18s ease, transform 0.18s ease;
 }
@@ -373,45 +768,35 @@ button {
   color: var(--caramel);
 }
 
-.text-link span,
-.all-link span {
-  transition: transform 0.18s ease;
-}
-
-.text-link:hover span,
-.all-link:hover span {
-  transform: translate(2px, -1px);
-}
-
 .hero-note {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 40px;
+  margin-top: 36px;
   color: var(--muted);
   font-size: 13px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
 }
 
 .note-line {
-  width: 36px;
+  width: 32px;
   height: 1.5px;
   background: var(--caramel);
 }
 
-/* Café Bar Visual Showcase */
+/* Café Bar Visual Showcase (Landify Floating Cards) */
 .hero-art {
-  min-height: 440px;
+  min-height: 446px;
   position: relative;
   display: grid;
   place-items: center;
   overflow: hidden;
   border: 1px solid #4a3222;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   background:
-    radial-gradient(circle at 72% 24%, rgba(212, 148, 90, 0.26), transparent 52%),
-    radial-gradient(circle at 22% 80%, rgba(156, 94, 53, 0.22), transparent 55%),
-    linear-gradient(155deg, #2d1c13 0%, #1f130d 62%, #382317 100%);
+    radial-gradient(circle at 72% 24%, rgba(212, 148, 90, 0.28), transparent 52%),
+    radial-gradient(circle at 22% 80%, rgba(156, 94, 53, 0.24), transparent 55%),
+    linear-gradient(155deg, #2d1c13 0%, #1e120c 62%, #382317 100%);
   box-shadow: var(--shadow-md), inset 0 0 0 6px rgba(246, 239, 228, 0.06);
 }
 
@@ -429,54 +814,87 @@ button {
 .hero-cup {
   position: relative;
   z-index: 1;
-  width: min(90%, 420px);
-  margin-top: 12px;
+  width: min(90%, 410px);
+  margin-top: 16px;
   filter: drop-shadow(0 18px 28px rgba(10, 5, 2, 0.45));
 }
 
 .art-stamp {
   position: absolute;
   z-index: 2;
-  top: 24px;
-  left: 26px;
+  top: 22px;
+  left: 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
   padding: 10px 14px;
-  border: 1px solid rgba(224, 169, 109, 0.35);
+  border: 1px solid rgba(224, 169, 109, 0.32);
   border-radius: var(--radius-sm);
-  background: rgba(36, 23, 17, 0.75);
-  backdrop-filter: blur(4px);
+  background: rgba(34, 21, 14, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   color: #f3e4d0;
+  box-shadow: 0 10px 24px rgba(12, 6, 3, 0.35);
+}
+
+.stamp-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: rgba(200, 148, 100, 0.18);
+  border: 1px solid rgba(224, 169, 109, 0.32);
+  color: #e6b885;
+}
+
+.art-stamp strong {
+  display: block;
   font-family: var(--serif);
   font-size: 11.5px;
-  line-height: 1.35;
   letter-spacing: 0.12em;
+  line-height: 1.25;
 }
 
 .art-stamp span {
-  display: inline-block;
-  margin-top: 4px;
+  display: block;
+  margin-top: 3px;
   font-family: var(--sans);
   font-size: 11px;
   color: #ddb07d;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 
 .art-caption {
   position: absolute;
-  right: 24px;
+  z-index: 2;
+  right: 22px;
   bottom: 20px;
-  padding: 5px 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
   border-radius: 999px;
-  background: rgba(252, 248, 241, 0.1);
-  border: 1px solid rgba(224, 169, 109, 0.24);
+  background: rgba(252, 248, 241, 0.12);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(224, 169, 109, 0.28);
   color: #f2e2cd;
   font-family: var(--serif);
-  font-size: 13.5px;
-  letter-spacing: 0.08em;
+  font-size: 13px;
+  letter-spacing: 0.06em;
 }
 
-/* Café Menu Board — Recipe Index Section */
+.art-caption .pulso-icon {
+  width: 15px;
+  height: 15px;
+  color: #e6b885;
+}
+
+/* ==========================================================================
+   Café Menu Board — Recipe Index Section (Sort UI / Koala UI Card System)
+   ========================================================================== */
 .recipe-section {
-  padding-block: 78px 96px;
+  padding-block: 76px 96px;
   border-top: 2px double var(--line-strong);
 }
 
@@ -509,18 +927,26 @@ button {
 }
 
 .all-link {
-  padding-bottom: 5px;
-  border-bottom: 1px solid var(--caramel);
+  padding: 7px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--paper-elevated);
+  box-shadow: var(--shadow-xs);
 }
 
-/* Search & Category Filter Bar */
+.all-link:hover {
+  border-color: var(--caramel);
+  background: #fffdf9;
+}
+
+/* Search & Category Filter Bar (Sort UI Control Bar) */
 .recipe-tools {
-  margin-top: 32px;
-  padding: 18px 22px;
+  margin-top: 30px;
+  padding: 14px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius-md);
   background: var(--paper-elevated);
@@ -537,17 +963,15 @@ button {
   border-radius: var(--radius-sm);
   background: var(--paper);
   color: var(--muted);
+  box-shadow: inset 0 1px 2px rgba(36, 23, 17, 0.03);
   transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
 
 .search-box svg {
   flex: none;
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
+  width: 17px;
+  height: 17px;
+  color: var(--caramel);
 }
 
 .search-box input {
@@ -557,7 +981,7 @@ button {
   border: 0;
   background: transparent;
   color: var(--ink);
-  font-size: 15px;
+  font-size: 14.5px;
 }
 
 .search-box input::placeholder {
@@ -568,7 +992,7 @@ button {
   border-color: var(--caramel);
   background: #fffdf9;
   color: var(--roast);
-  box-shadow: 0 0 0 3px rgba(156, 94, 53, 0.15);
+  box-shadow: var(--ring-focus);
 }
 
 .search-clear {
@@ -599,73 +1023,94 @@ button {
   min-width: 24px;
   padding: 2px 6px;
   border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: 5px;
   background: var(--paper-elevated);
+  box-shadow: 0 1px 0 var(--line);
   text-align: center;
-  font: 12px var(--sans);
+  font: 11.5px var(--sans);
+  font-weight: 600;
   color: var(--muted);
 }
 
 .filter-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 7px;
 }
 
 .filter-chip {
   min-height: 38px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 0 15px;
+  gap: 7px;
+  padding: 0 13px;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   background: var(--paper);
   color: var(--ink-soft);
   cursor: pointer;
   font-size: 13.5px;
   font-weight: 500;
-  transition: all 0.18s ease;
+  transition: all 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.chip-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--caramel);
+  transition: color 0.18s ease;
 }
 
 .filter-chip span {
-  font-size: 12px;
-  color: var(--muted-light);
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: rgba(78, 49, 33, 0.08);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--muted);
   font-variant-numeric: tabular-nums;
 }
 
 .filter-chip:hover {
   border-color: var(--caramel);
-  background: var(--paper-deep);
+  background: #fffdf9;
   color: var(--espresso);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-xs);
 }
 
 .filter-chip.is-active {
   border-color: var(--espresso);
   background: var(--espresso);
   color: #fcf7ef;
-  box-shadow: 0 3px 10px rgba(44, 27, 18, 0.22);
+  box-shadow: 0 4px 12px rgba(40, 24, 16, 0.2);
+}
+
+.filter-chip.is-active .chip-icon {
+  color: #e6b885;
 }
 
 .filter-chip.is-active span {
-  color: #dfc3a4;
+  background: rgba(255, 255, 255, 0.15);
+  color: #f4dec4;
 }
 
 .results-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 18px 2px 16px;
+  margin: 18px 4px 16px;
 }
 
 .results-count {
   margin: 0;
   color: var(--muted);
   font-size: 13.5px;
-  letter-spacing: 0.04em;
+  font-weight: 500;
+  letter-spacing: 0.03em;
 }
 
-/* Café Menu Cards */
+/* Café Menu Cards (Untitled UI / Koala UI Structured Cards) */
 .recipe-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -727,54 +1172,67 @@ button {
   display: grid;
   place-items: center;
   overflow: hidden;
-  border-bottom: 1px dashed var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
 /* 莓果果韻特調（淺中焙果香調） */
 .accent-rose .card-art {
   background:
     radial-gradient(circle at 75% 25%, rgba(179, 90, 66, 0.16), transparent 55%),
-    linear-gradient(135deg, #f3e2d9 0%, #e6cbbe 100%);
+    linear-gradient(135deg, #f5e5dd 0%, #e8cfc2 100%);
 }
 
 /* 焦糖胡桃手沖／冰鎮（琥珀拿鐵調） */
 .accent-sage .card-art {
   background:
     radial-gradient(circle at 75% 25%, rgba(156, 94, 53, 0.18), transparent 55%),
-    linear-gradient(135deg, #efe2cf 0%, #dfc9ae 100%);
+    linear-gradient(135deg, #f1e5d3 0%, #e1ccb2 100%);
 }
 
 /* 濃醇燕麥奶油（絲滑奶泡調） */
 .accent-cream .card-art {
   background:
     radial-gradient(circle at 75% 25%, rgba(78, 49, 33, 0.14), transparent 55%),
-    linear-gradient(135deg, #f4eadc 0%, #e5d5be 100%);
+    linear-gradient(135deg, #f6ede0 0%, #e7d8c2 100%);
 }
 
 .card-art-label {
   position: absolute;
   z-index: 2;
-  top: 14px;
-  left: 16px;
-  padding: 3px 11px;
-  border: 1px solid rgba(70, 48, 36, 0.15);
+  top: 13px;
+  left: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border: 1px solid rgba(70, 48, 36, 0.14);
   border-radius: 999px;
-  background: rgba(252, 248, 241, 0.9);
-  backdrop-filter: blur(4px);
+  background: rgba(252, 248, 241, 0.92);
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow-xs);
   color: var(--espresso);
   font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
+}
+
+.card-art-label .pulso-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--caramel);
 }
 
 .card-art-yield {
   position: absolute;
   z-index: 2;
-  top: 16px;
-  right: 16px;
+  top: 15px;
+  right: 15px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: rgba(36, 23, 17, 0.07);
   font-family: var(--serif);
   color: var(--roast);
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 600;
   letter-spacing: 0.06em;
 }
@@ -814,18 +1272,18 @@ button {
   height: 90px;
   margin-top: 14px;
   filter: drop-shadow(0 6px 12px rgba(44, 27, 18, 0.12));
-  transition: transform 0.28s ease;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .recipe-card:hover .card-illustration {
-  transform: translateY(-3px) rotate(-2deg);
+  transform: translateY(-4px) scale(1.03) rotate(-1.5deg);
 }
 
 .card-art-mark {
   position: absolute;
   right: 16px;
   bottom: 4px;
-  color: rgba(78, 49, 33, 0.11);
+  color: rgba(78, 49, 33, 0.1);
   font-family: var(--serif);
   font-size: 64px;
   line-height: 1;
@@ -836,26 +1294,44 @@ button {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px 22px 18px;
+  padding: 18px 20px 16px;
 }
 
 .card-meta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  color: var(--caramel);
-  font-size: 12.5px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
+  gap: 6px;
 }
 
-.card-meta .meta-pending {
+.meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--paper);
+  border: 1px solid rgba(191, 169, 142, 0.45);
+  color: var(--ink-soft);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.meta-badge .pulso-icon {
+  width: 13.5px;
+  height: 13.5px;
+  color: var(--caramel);
+}
+
+.meta-badge.meta-pending {
+  border-style: dashed;
+  border-color: var(--berry);
+  background: var(--berry-tint);
   color: var(--berry);
 }
 
-.card-meta-dot {
-  color: var(--line-strong);
+.meta-badge.meta-pending .pulso-icon {
+  color: var(--berry);
 }
 
 .card-status-tag {
@@ -870,9 +1346,9 @@ button {
 }
 
 .card-body h3 {
-  margin: 8px 0 8px;
+  margin: 10px 0 6px;
   font-family: var(--serif);
-  font-size: 22px;
+  font-size: 21.5px;
   font-weight: 600;
   letter-spacing: 0.02em;
   color: var(--espresso);
@@ -887,7 +1363,7 @@ button {
   margin: 0 0 14px;
   color: var(--ink-soft);
   font-size: 14.5px;
-  line-height: 1.75;
+  line-height: 1.72;
 }
 
 .card-ingredients-preview {
@@ -899,9 +1375,9 @@ button {
 }
 
 .card-ingredient-pill {
-  padding: 3px 10px;
-  border: 1px solid rgba(191, 169, 142, 0.45);
-  border-radius: 4px;
+  padding: 3px 9px;
+  border: 1px solid rgba(191, 169, 142, 0.5);
+  border-radius: 6px;
   background: var(--paper);
   color: var(--ink-soft);
   font-size: 12px;
@@ -918,19 +1394,29 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding-top: 13px;
+  padding-top: 12px;
   border-top: 1px dashed var(--line-strong);
 }
 
 .card-yield-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: var(--muted);
   font-size: 12.5px;
+  font-weight: 500;
+}
+
+.card-yield-text .pulso-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--caramel);
 }
 
 .card-open {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   padding: 0;
   border: 0;
   background: transparent;
@@ -938,28 +1424,42 @@ button {
   cursor: pointer;
   font-size: 13.5px;
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   white-space: nowrap;
 }
 
-.card-open span {
-  font-size: 15px;
-  transition: transform 0.18s ease;
+.card-open-icon {
+  width: 28px;
+  height: 28px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--paper);
+  color: var(--espresso);
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.card-open-icon .pulso-icon {
+  width: 15px;
+  height: 15px;
 }
 
 .recipe-card:hover .card-open {
   color: var(--caramel);
 }
 
-.recipe-card:hover .card-open span {
-  transform: translate(3px, -2px);
+.recipe-card:hover .card-open-icon {
+  background: var(--espresso);
+  border-color: var(--espresso);
+  color: #fcf7ef;
 }
 
 .empty-state {
   padding: 56px 24px;
   border: 1px dashed var(--line-strong);
   border-radius: var(--radius-md);
-  background: rgba(252, 248, 241, 0.7);
+  background: rgba(252, 248, 241, 0.75);
   text-align: center;
   color: var(--muted);
 }
@@ -968,11 +1468,23 @@ button {
   display: none;
 }
 
-.empty-state > span {
-  display: inline-block;
+.empty-icon {
+  width: 52px;
+  height: 52px;
+  margin-inline: auto;
+  margin-bottom: 10px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  border: 1px solid var(--line-strong);
+  background: var(--paper-elevated);
   color: var(--caramel);
-  font-size: 34px;
-  margin-bottom: 6px;
+  box-shadow: var(--shadow-xs);
+}
+
+.empty-icon .pulso-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .empty-state h3 {
@@ -988,11 +1500,13 @@ button {
   font-size: 14.5px;
 }
 
-/* Dark Roast Espresso Bar Section (.method-band) */
+/* ==========================================================================
+   Dark Roast Espresso Bar Section (.method-band — Frames X Editorial Grid)
+   ========================================================================== */
 .method-band {
   background:
-    radial-gradient(circle at 82% 20%, rgba(200, 148, 100, 0.14), transparent 48%),
-    linear-gradient(160deg, #271810 0%, #1d120c 100%);
+    radial-gradient(circle at 82% 20%, rgba(200, 148, 100, 0.15), transparent 48%),
+    linear-gradient(160deg, #271810 0%, #1b100b 100%);
   color: #f6efe4;
   border-block: 1px solid #3d271b;
 }
@@ -1019,7 +1533,7 @@ button {
   font-family: var(--serif);
   font-size: clamp(32px, 3.8vw, 46px);
   font-weight: 500;
-  line-height: 1.35;
+  line-height: 1.32;
   color: #fcf7ef;
 }
 
@@ -1048,8 +1562,8 @@ button {
 }
 
 .method-band .button-outline {
-  border-color: #c89464;
-  background: rgba(200, 148, 100, 0.12);
+  border-color: rgba(200, 148, 100, 0.55);
+  background: rgba(200, 148, 100, 0.14);
   color: #f9ecdc;
 }
 
@@ -1060,17 +1574,23 @@ button {
 }
 
 .method-steps {
-  border-top: 1px solid rgba(200, 148, 100, 0.26);
+  border-top: 1px solid rgba(200, 148, 100, 0.24);
 }
 
 .method-step {
   min-height: 98px;
   display: grid;
-  grid-template-columns: 50px 1fr 32px;
+  grid-template-columns: 50px 1fr 40px;
   align-items: center;
   gap: 14px;
-  padding-block: 18px;
-  border-bottom: 1px solid rgba(200, 148, 100, 0.26);
+  padding: 18px 12px;
+  border-bottom: 1px solid rgba(200, 148, 100, 0.24);
+  border-radius: var(--radius-xs);
+  transition: background 0.2s ease;
+}
+
+.method-step:hover {
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .step-number {
@@ -1097,13 +1617,24 @@ button {
 }
 
 .step-mark {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  border: 1px solid rgba(226, 176, 121, 0.24);
+  background: rgba(226, 176, 121, 0.1);
   color: #e2b079;
-  font-family: var(--serif);
-  font-size: 22px;
-  text-align: right;
 }
 
-/* About Section & Footer */
+.step-mark .pulso-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* ==========================================================================
+   About Section & Footer
+   ========================================================================== */
 .about-section {
   min-height: 230px;
   display: grid;
@@ -1115,24 +1646,20 @@ button {
 }
 
 .about-mark {
-  width: 62px;
-  height: 62px;
+  width: 60px;
+  height: 60px;
   display: grid;
   place-items: center;
-  border: 1.5px solid var(--roast);
-  border-radius: 50%;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 16px;
   background: var(--paper-elevated);
-  color: var(--espresso);
-  font-family: var(--serif);
-  font-size: 26px;
-  line-height: 0.8;
-  text-align: center;
+  color: var(--caramel);
+  box-shadow: var(--shadow-xs);
 }
 
-.about-mark span {
-  color: var(--caramel);
-  font-family: var(--sans);
-  font-size: 13px;
+.about-mark .pulso-icon {
+  width: 26px;
+  height: 26px;
 }
 
 .about-section h2 {
@@ -1192,23 +1719,25 @@ button {
   color: var(--caramel);
 }
 
-/* Recipe Detail Dialog — Barista Recipe Ticket */
+/* ==========================================================================
+   Recipe Detail Dialog — Barista Recipe Ticket (Untitled UI Modal)
+   ========================================================================== */
 .recipe-dialog {
-  width: min(640px, calc(100% - 28px));
-  max-height: min(88vh, 820px);
+  width: min(650px, calc(100% - 28px));
+  max-height: min(88vh, 840px);
   padding: 0;
   overflow: auto;
   border: 1px solid var(--line-strong);
   border-top: 5px solid var(--espresso);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   background: var(--paper-elevated);
   color: var(--ink);
   box-shadow: var(--shadow-lg);
 }
 
 .recipe-dialog::backdrop {
-  background: rgba(24, 14, 9, 0.66);
-  backdrop-filter: blur(4px);
+  background: rgba(24, 14, 9, 0.64);
+  backdrop-filter: blur(5px);
 }
 
 .recipe-dialog form {
@@ -1221,26 +1750,34 @@ button {
 }
 
 .dialog-close {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   margin: 16px 16px 0 0;
+  display: grid;
+  place-items: center;
+  padding: 0;
   border: 1px solid var(--line-strong);
   border-radius: 50%;
   background: rgba(252, 248, 241, 0.94);
   color: var(--espresso);
   cursor: pointer;
-  font-size: 22px;
-  line-height: 1;
-  transition: background 0.18s ease, transform 0.18s ease;
+  box-shadow: var(--shadow-xs);
+  transition: background 0.18s ease, transform 0.18s ease, border-color 0.18s ease;
+}
+
+.dialog-close .pulso-icon {
+  width: 17px;
+  height: 17px;
 }
 
 .dialog-close:hover {
   background: #fff;
+  border-color: var(--caramel);
   transform: scale(1.05);
 }
 
 .dialog-header-band {
-  padding: 36px 42px 26px;
+  padding: 34px 40px 26px;
   border-bottom: 1px dashed var(--line-strong);
 }
 
@@ -1263,15 +1800,44 @@ button {
   justify-content: space-between;
   gap: 8px;
   padding-right: 42px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.dialog-cat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 11px;
+  border: 1px solid rgba(78, 49, 33, 0.18);
+  border-radius: 999px;
+  background: rgba(252, 248, 241, 0.9);
+  color: var(--espresso);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.dialog-cat-pill .pulso-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--caramel);
 }
 
 .dialog-pending-pill,
 .dialog-ready-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   padding: 3px 10px;
   border-radius: 999px;
   font-size: 11.5px;
   font-weight: 600;
+}
+
+.dialog-pending-pill .pulso-icon,
+.dialog-ready-pill .pulso-icon {
+  width: 13px;
+  height: 13px;
 }
 
 .dialog-pending-pill {
@@ -1282,8 +1848,8 @@ button {
 
 .dialog-ready-pill {
   border: 1px solid rgba(104, 120, 96, 0.35);
-  background: #e6eadf;
-  color: #3f5041;
+  background: var(--green-tint);
+  color: var(--green-dark);
 }
 
 .dialog-header-band h2 {
@@ -1316,19 +1882,32 @@ button {
 }
 
 .dialog-badges span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   padding: 5px 12px;
-  border: 1px solid rgba(78, 49, 33, 0.22);
+  border: 1px solid rgba(78, 49, 33, 0.2);
   border-radius: 999px;
-  background: rgba(252, 248, 241, 0.9);
+  background: rgba(252, 248, 241, 0.92);
   color: var(--roast);
   font-size: 12.5px;
   font-weight: 500;
+}
+
+.dialog-badges span .pulso-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--caramel);
 }
 
 .dialog-badges span.is-pending-badge {
   border-style: dashed;
   border-color: var(--berry);
   background: var(--berry-tint);
+  color: var(--berry);
+}
+
+.dialog-badges span.is-pending-badge .pulso-icon {
   color: var(--berry);
 }
 
@@ -1340,12 +1919,14 @@ button {
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   background: var(--paper-elevated);
+  box-shadow: var(--shadow-xs);
 }
 
 .scaler-label {
   padding-inline: 8px 4px;
   color: var(--muted);
   font-size: 12px;
+  font-weight: 500;
 }
 
 .scaler-btn {
@@ -1366,7 +1947,7 @@ button {
 }
 
 .dialog-body {
-  padding: 28px 42px 34px;
+  padding: 28px 40px 34px;
 }
 
 .dialog-section + .dialog-section {
@@ -1402,12 +1983,12 @@ button {
 
 .ingredient-list li {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   gap: 12px;
   padding: 11px 10px;
   border-bottom: 1px dashed var(--line);
-  border-radius: 4px;
+  border-radius: 6px;
   font-size: 15px;
   cursor: pointer;
   transition: background 0.15s ease;
@@ -1423,18 +2004,22 @@ button {
 }
 
 .ingredient-check {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   flex: none;
-  align-self: center;
   display: inline-grid;
   place-items: center;
   border: 1.5px solid var(--line-strong);
-  border-radius: 4px;
+  border-radius: 6px;
   background: #fffdf9;
   color: transparent;
-  font-size: 12px;
   transition: all 0.15s ease;
+}
+
+.ingredient-check .pulso-icon {
+  width: 13px;
+  height: 13px;
+  stroke-width: 2.5;
 }
 
 .ingredient-list li.is-checked .ingredient-check {
@@ -1519,13 +2104,12 @@ button {
   background: #f8ece6;
 }
 
-.recipe-note span {
+.recipe-note > span {
+  margin-top: 2px;
   color: var(--caramel);
-  font-size: 16px;
-  line-height: 1.4;
 }
 
-.recipe-note.is-pending-note span {
+.recipe-note.is-pending-note > span {
   color: var(--berry);
 }
 
@@ -1551,6 +2135,9 @@ button {
 }
 
 .dialog-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 8px 14px;
   border: 1px solid var(--line);
   border-radius: var(--radius-sm);
@@ -1562,13 +2149,21 @@ button {
   transition: all 0.16s ease;
 }
 
+.dialog-nav-btn .pulso-icon {
+  width: 15px;
+  height: 15px;
+  color: var(--caramel);
+}
+
 .dialog-nav-btn:hover {
   border-color: var(--caramel);
   background: var(--paper-deep);
   color: var(--espresso);
 }
 
-/* Brew Guide Page */
+/* ==========================================================================
+   Brew Guide Page
+   ========================================================================== */
 .guide-page {
   overflow: hidden;
 }
@@ -1588,13 +2183,20 @@ button {
 }
 
 .back-link {
-  margin-bottom: 22px;
+  display: flex;
+  width: fit-content;
+  margin-bottom: 18px;
   color: var(--muted);
   font-size: 13.5px;
 }
 
+.back-link .pulso-icon {
+  width: 16px;
+  height: 16px;
+}
+
 .guide-hero h1 {
-  margin: 14px 0 14px;
+  margin: 16px 0 14px;
   font-size: clamp(36px, 4.4vw, 54px);
 }
 
@@ -1684,8 +2286,14 @@ button {
   display: grid;
   grid-template-columns: 54px 1fr;
   gap: 16px;
-  padding: 26px 0;
+  padding: 26px 8px;
   border-bottom: 1px dashed var(--line-strong);
+  border-radius: var(--radius-xs);
+  transition: background 0.18s ease;
+}
+
+.brew-step:hover {
+  background: rgba(252, 248, 241, 0.55);
 }
 
 .brew-step-no {
@@ -1693,12 +2301,13 @@ button {
   height: 38px;
   display: grid;
   place-items: center;
-  border-radius: 50%;
+  border-radius: 10px;
   background: var(--espresso);
   color: #f7e8d4;
   font-family: var(--serif);
   font-size: 15px;
   font-weight: 600;
+  box-shadow: var(--shadow-xs);
 }
 
 .brew-step h3 {
@@ -1718,15 +2327,24 @@ button {
 }
 
 .step-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   margin-top: 14px;
   padding: 4px 12px;
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   background: var(--paper-elevated);
+  box-shadow: var(--shadow-xs);
   color: var(--roast);
   font-size: 12.5px;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.step-tag .pulso-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--caramel);
 }
 
 .guide-aside {
@@ -1837,12 +2455,14 @@ button {
 
 .aside-note {
   display: flex;
+  align-items: flex-start;
   gap: 10px;
   margin-top: 18px;
   color: var(--muted);
 }
 
 .aside-note > span {
+  margin-top: 3px;
   color: var(--caramel);
 }
 
@@ -1894,18 +2514,17 @@ button {
     width: min(100% - 44px, 740px);
   }
   .site-header {
-    height: 74px;
-    padding-inline: 22px;
+    height: 72px;
   }
   .main-nav {
-    gap: 22px;
+    gap: 4px;
+  }
+  .nav-link {
+    padding: 7px 11px;
   }
   .hero {
     min-height: 460px;
     gap: 28px;
-  }
-  .hero-copy {
-    padding-left: 0;
   }
   .hero-art {
     min-height: 360px;
@@ -1936,8 +2555,7 @@ button {
     width: calc(100% - 32px);
   }
   .site-header {
-    height: 68px;
-    padding-inline: 16px;
+    height: 66px;
   }
   .brand {
     gap: 9px;
@@ -1945,16 +2563,20 @@ button {
   .brand-mark {
     width: 36px;
     height: 36px;
+    border-radius: 10px;
   }
   .brand-copy strong {
-    font-size: 19px;
+    font-size: 18px;
   }
   .brand-copy small {
     font-size: 9px;
   }
   .main-nav {
-    gap: 16px;
+    gap: 4px;
     font-size: 13px;
+  }
+  .nav-link {
+    padding: 6px 10px;
   }
   .nav-about {
     display: none;
@@ -1962,7 +2584,7 @@ button {
   .hero {
     grid-template-columns: 1fr;
     gap: 28px;
-    padding-block: 36px 48px;
+    padding-block: 32px 48px;
   }
   .hero h1 {
     margin: 16px 0 14px;
@@ -1978,7 +2600,7 @@ button {
     margin-top: 28px;
   }
   .hero-art {
-    min-height: 300px;
+    min-height: 310px;
   }
   .hero-cup {
     width: min(84%, 330px);
@@ -2012,7 +2634,7 @@ button {
   }
   .filter-chip {
     min-height: 34px;
-    padding-inline: 12px;
+    padding-inline: 11px;
     font-size: 13px;
   }
   .recipe-grid {
@@ -2035,7 +2657,6 @@ button {
   .about-mark {
     width: 48px;
     height: 48px;
-    font-size: 21px;
   }
   .about-section h2 {
     margin-top: 4px;

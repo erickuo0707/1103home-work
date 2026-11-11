@@ -32,6 +32,42 @@ function recipeHasPendingItems(recipe) {
   return (recipe.ingredients || []).some((ing) => isPendingText(ing.amount) || isPendingText(ing.name));
 }
 
+/* PulsoIcon 24x24 Animated Icons (https://github.com/CityPulso/PulsoIcon) */
+const PULSO_ICONS = {
+  coffee: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-float-1" d="M10 2v2"/><path class="pi-float-2" d="M14 2v2"/><path class="pi-press" d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path class="pi-float-3" d="M6 2v2"/></svg>`,
+  bean: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-wobble" d="M19.07 4.93A10 7 -45 0 0 4.93 19.07 10 7 -45 0 0 19.07 4.93z"/><path d="M4.93 19.07C11 19 13 5 19.07 4.93"/></svg>`,
+  cupSoda: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-sway" d="m6 8 1.75 12.28a2 2 0 0 0 2 1.72h4.54a2 2 0 0 0 2-1.72L18 8"/><path class="pi-sway" d="M5 8h14"/><path class="pi-sway" d="M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/><path class="pi-swing" d="m12 8 1-6h2"/></svg>`,
+  cakeSlice: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-grow-x" d="M16 13H3"/><path class="pi-grow-x" d="M16 17H3"/><path class="pi-jelly" d="m7.2 7.9-3.388 2.5A2 2 0 0 0 3 12.01V20a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-8.654c0-2-2.44-6.026-6.44-8.026a1 1 0 0 0-1.082.057L10.4 5.6"/><circle class="pi-float-1" cx="9" cy="7" r="2"/></svg>`,
+  milk: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-sway" d="M8 2h8"/><path class="pi-sway" d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></svg>`,
+  droplets: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-drop-1" d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path class="pi-drop-2" d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>`,
+  glassWater: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-sway" d="M5.116 4.104A1 1 0 0 1 6.11 3h11.78a1 1 0 0 1 .994 1.105L17.19 20.21A2 2 0 0 1 15.2 22H8.8a2 2 0 0 1-2-1.79z"/><path d="M6 12a5 5 0 0 1 6 0 5 5 0 0 0 6 0"/></svg>`,
+  timer: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><line x1="10" x2="14" y1="2" y2="2"/><line class="pi-spin" x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg>`,
+  flame: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-sway" d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>`,
+  scale: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18"/><path class="pi-sway" d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path class="pi-sway" d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path class="pi-sway" d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg>`,
+  sparkles: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-twinkle" d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/></svg>`,
+  arrowUpRight: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-shoot" d="M7 7h10v10"/><path class="pi-shoot" d="M7 17 17 7"/></svg>`,
+  arrowLeft: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>`,
+  arrowRight: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>`,
+  check: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>`
+};
+
+function categoryPulsoIcon(category) {
+  switch (category) {
+    case "手沖":
+      return PULSO_ICONS.droplets;
+    case "特調":
+      return PULSO_ICONS.cupSoda;
+    case "甜點":
+      return PULSO_ICONS.cakeSlice;
+    case "冰咖啡":
+      return PULSO_ICONS.glassWater;
+    case "奶咖":
+      return PULSO_ICONS.milk;
+    default:
+      return PULSO_ICONS.coffee;
+  }
+}
+
 function recipeIllustration(recipe) {
   const slug = recipe.slug || "";
   const category = recipe.category || "";
@@ -128,7 +164,6 @@ function recipeIllustration(recipe) {
 function scaleAmountText(amount, factor) {
   if (factor === 1) return String(amount);
   const raw = String(amount);
-  // Avoid scaling temperatures (e.g. "約 80°C") or quoted raw codes (e.g. "「80」")
   if (raw.includes("°C") || raw.includes("「")) return raw;
 
   return raw.replace(/\d[\d,]*(?:\.\d+)?/g, (match) => {
@@ -151,7 +186,7 @@ function updateCategoryCounts() {
       ? recipes.length
       : recipes.filter((item) => item.category === cat).length;
     const formatted = String(count).padStart(2, "0");
-    let badge = button.querySelector("span");
+    let badge = button.querySelector("span:not(.chip-icon)");
     if (!badge) {
       badge = document.createElement("span");
       button.appendChild(badge);
@@ -163,7 +198,6 @@ function updateCategoryCounts() {
 function recipeCard(recipe, index) {
   const accent = ["rose", "sage", "cream"].includes(recipe.accent) ? recipe.accent : "cream";
   const menuNo = `NO.${String(index + 1).padStart(2, "0")}`;
-  const isDessert = recipe.category === "甜點";
   const hasPending = recipeHasPendingItems(recipe);
   const totalIngredients = (recipe.ingredients || []).length;
   const previewIngredients = (recipe.ingredients || [])
@@ -175,7 +209,10 @@ function recipeCard(recipe, index) {
   return `
     <article class="recipe-card accent-${accent}" style="--card-index:${index}" data-recipe="${escapeHTML(recipe.slug)}">
       <div class="card-art" aria-hidden="true">
-        <span class="card-art-label">${escapeHTML(recipe.category)}</span>
+        <span class="card-art-label">
+          ${categoryPulsoIcon(recipe.category)}
+          ${escapeHTML(recipe.category)}
+        </span>
         <span class="card-art-yield">${menuNo}</span>
         <span class="card-orbit orbit-one"></span><span class="card-orbit orbit-two"></span>
         ${recipeIllustration(recipe)}
@@ -183,10 +220,15 @@ function recipeCard(recipe, index) {
       </div>
       <div class="card-body">
         <div class="card-meta">
-          <span class="${isPendingText(recipe.time) ? "meta-pending" : ""}">${isDessert ? "⏲" : "☕"} ${escapeHTML(recipe.time)}</span>
-          <span class="card-meta-dot" aria-hidden="true">·</span>
-          <span>難度：${escapeHTML(recipe.level)}</span>
-          ${hasPending ? `<span class="card-status-tag" title="部分比例或烤溫待實測確認">試作筆記</span>` : ""}
+          <span class="meta-badge ${isPendingText(recipe.time) ? "meta-pending" : ""}">
+            ${PULSO_ICONS.timer}
+            ${escapeHTML(recipe.time)}
+          </span>
+          <span class="meta-badge">
+            ${PULSO_ICONS.flame}
+            ${escapeHTML(recipe.level)}
+          </span>
+          ${hasPending ? `<span class="card-status-tag" title="部分比例或烤溫待實測確認">試作待補</span>` : ""}
         </div>
         <h3>${escapeHTML(recipe.title)}</h3>
         <p>${escapeHTML(recipe.summary)}</p>
@@ -194,8 +236,14 @@ function recipeCard(recipe, index) {
           ${previewIngredients}${extraCount}
         </div>
         <div class="card-footer-row">
-          <span class="card-yield-text">${escapeHTML(recipe.yield)}</span>
-          <button class="card-open" type="button" data-recipe="${escapeHTML(recipe.slug)}" aria-label="查看${escapeHTML(recipe.title)}配方明細">查看配方單 <span aria-hidden="true">↗</span></button>
+          <span class="card-yield-text">
+            ${PULSO_ICONS.scale}
+            ${escapeHTML(recipe.yield)}
+          </span>
+          <button class="card-open" type="button" data-recipe="${escapeHTML(recipe.slug)}" aria-label="查看${escapeHTML(recipe.title)}配方明細">
+            <span>配方明細</span>
+            <span class="card-open-icon" aria-hidden="true">${PULSO_ICONS.arrowUpRight}</span>
+          </button>
         </div>
       </div>
     </article>`;
@@ -242,16 +290,23 @@ function renderDialogContent(recipe, scale = 1) {
   dialogContent.innerHTML = `
     <div class="dialog-header-band accent-${accent}">
       <div class="dialog-kicker-row">
-        <p class="eyebrow">${escapeHTML(recipe.category)} <span>／ ${escapeHTML(recipe.time)}</span></p>
-        ${hasPending ? `<span class="dialog-pending-pill">📝 試作紀錄（部分參數待補）</span>` : `<span class="dialog-ready-pill">✓ 起始配方已建立</span>`}
+        <span class="dialog-cat-pill">
+          ${categoryPulsoIcon(recipe.category)}
+          ${escapeHTML(recipe.category)}
+        </span>
+        ${
+          hasPending
+            ? `<span class="dialog-pending-pill">${PULSO_ICONS.sparkles} 試作紀錄（部分參數待補）</span>`
+            : `<span class="dialog-ready-pill">${PULSO_ICONS.check} 起始配方已建立</span>`
+        }
       </div>
       <h2 id="dialog-title">${escapeHTML(recipe.title)}</h2>
       <p class="dialog-summary">${escapeHTML(recipe.summary)}</p>
       <div class="dialog-facts">
         <div class="dialog-badges">
-          <span>份量：${escapeHTML(scaleAmountText(recipe.yield, scale))}</span>
-          <span>難度：${escapeHTML(recipe.level)}</span>
-          <span class="${isPendingText(recipe.time) ? "is-pending-badge" : ""}">時間：${escapeHTML(recipe.time)}</span>
+          <span>${PULSO_ICONS.scale} 份量：${escapeHTML(scaleAmountText(recipe.yield, scale))}</span>
+          <span>${PULSO_ICONS.flame} 難度：${escapeHTML(recipe.level)}</span>
+          <span class="${isPendingText(recipe.time) ? "is-pending-badge" : ""}">${PULSO_ICONS.timer} 時間：${escapeHTML(recipe.time)}</span>
         </div>
         <div class="serving-scaler" role="group" aria-label="調整配方份量">
           <span class="scaler-label">份量換算</span>
@@ -277,7 +332,7 @@ function renderDialogContent(recipe, scale = 1) {
               const pendingAmount = isPendingText(item.amount) || isPendingText(item.name);
               return `
             <li role="checkbox" aria-checked="false" tabindex="0" class="${pendingAmount ? "has-pending-amount" : ""}">
-              <span class="ingredient-check" aria-hidden="true">✓</span>
+              <span class="ingredient-check" aria-hidden="true">${PULSO_ICONS.check}</span>
               <span class="ingredient-name">${escapeHTML(item.name)}</span>
               <span class="ingredient-amount ${pendingAmount ? "is-pending" : ""}">${escapeHTML(scaledAmount)}</span>
             </li>`;
@@ -294,7 +349,7 @@ function renderDialogContent(recipe, scale = 1) {
         </ol>
       </section>
       <div class="recipe-note ${hasPending ? "is-pending-note" : ""}">
-        <span aria-hidden="true">${hasPending ? "⚠" : "✳"}</span>
+        <span aria-hidden="true">${PULSO_ICONS.sparkles}</span>
         <div>
           <strong>${hasPending ? "試作待確認提醒" : "吧台調整筆記"}</strong>
           <p>${escapeHTML(recipe.note)}</p>
@@ -303,8 +358,14 @@ function renderDialogContent(recipe, scale = 1) {
       ${
         recipes.length > 1
           ? `<div class="dialog-footer-nav">
-              <button type="button" class="dialog-nav-btn" data-nav-slug="${escapeHTML(prevRecipe.slug)}">← ${escapeHTML(prevRecipe.title)}</button>
-              <button type="button" class="dialog-nav-btn" data-nav-slug="${escapeHTML(nextRecipe.slug)}">${escapeHTML(nextRecipe.title)} →</button>
+              <button type="button" class="dialog-nav-btn" data-nav-slug="${escapeHTML(prevRecipe.slug)}">
+                ${PULSO_ICONS.arrowLeft}
+                <span>${escapeHTML(prevRecipe.title)}</span>
+              </button>
+              <button type="button" class="dialog-nav-btn" data-nav-slug="${escapeHTML(nextRecipe.slug)}">
+                <span>${escapeHTML(nextRecipe.title)}</span>
+                ${PULSO_ICONS.arrowRight}
+              </button>
             </div>`
           : ""
       }

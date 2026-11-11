@@ -11,40 +11,114 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳到主要內容</a>
-  <header class="site-header shell">
-    <a class="brand" href="index.html" aria-label="萃光咖啡筆記首頁">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 40 40" fill="none"><path d="M9 14h20v12a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8V14Z"/><path d="M29 18h3a4 4 0 0 1 0 8h-4M12 9c0-2 2-2 2-4m6 4c0-2 2-2 2-4m5 4c0-2 2-2 2-4"/></svg>
-      </span>
-      <span class="brand-copy"><strong>萃光</strong><small>COFFEE ROAST &amp; NOTES</small></span>
-    </a>
-    <nav class="main-nav" aria-label="主要導覽">
-      <a class="nav-link is-current" href="index.html">配方索引</a>
-      <a class="nav-link" href="brew-guide.html">沖煮指南</a>
-      <a class="nav-link nav-about" href="#about">關於筆記</a>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner shell">
+      <a class="brand" href="index.html" aria-label="萃光咖啡筆記首頁">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="pulso-icon" viewBox="0 0 24 24" fill="none">
+            <path class="pi-float-1" d="M10 2v2"/>
+            <path class="pi-float-2" d="M14 2v2"/>
+            <path class="pi-float-3" d="M6 2v2"/>
+            <path class="pi-press" d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/>
+          </svg>
+        </span>
+        <span class="brand-copy"><strong>萃光</strong><small>COFFEE ROAST &amp; NOTES</small></span>
+      </a>
+      <nav class="main-nav" aria-label="主要導覽">
+        <a class="nav-link is-current" href="index.html">
+          <svg class="pulso-icon nav-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path class="pi-float-1" d="M10 2v2"/><path class="pi-float-2" d="M14 2v2"/><path class="pi-press" d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path class="pi-float-3" d="M6 2v2"/>
+          </svg>
+          配方索引
+        </a>
+        <a class="nav-link" href="brew-guide.html">
+          <svg class="pulso-icon nav-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path class="pi-drop-1" d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/>
+            <path class="pi-drop-2" d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>
+          </svg>
+          沖煮指南
+        </a>
+        <a class="nav-link nav-about" href="#about">
+          <svg class="pulso-icon nav-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v16"/><path class="pi-press" d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/>
+          </svg>
+          關於筆記
+        </a>
+      </nav>
+    </div>
   </header>
 
   <main id="main-content">
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-dot"></span> 咖啡廳工作用的配方查詢筆記</p>
+        <div class="eyebrow-badge">
+          <span class="eyebrow-dot"></span>
+          <span>咖啡廳工作用的配方查詢筆記</span>
+        </div>
         <h1 id="hero-title">咖啡廳工作用配方，<br><em>需要時快速查找。</em></h1>
         <p class="hero-description">把工作時常用的咖啡飲品與甜點食譜集中整理，搜尋配方名稱或材料，就能快速查看用量和製作步驟。</p>
         <div class="hero-roast-tags" aria-label="吧台日常沖煮與烘焙方向">
-          <span class="roast-tag"><i class="roast-bean" aria-hidden="true"></i> 淺中焙手沖</span>
-          <span class="roast-tag"><i class="roast-bean" aria-hidden="true"></i> 義式濃縮 Crema</span>
-          <span class="roast-tag"><i class="roast-bean" aria-hidden="true"></i> 季節特調與手作甜點</span>
+          <span class="roast-tag">
+            <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path class="pi-wobble" d="M19.07 4.93A10 7 -45 0 0 4.93 19.07 10 7 -45 0 0 19.07 4.93z"/>
+              <path d="M4.93 19.07C11 19 13 5 19.07 4.93"/>
+            </svg>
+            淺中焙手沖
+          </span>
+          <span class="roast-tag">
+            <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path class="pi-press" d="M10 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/>
+              <path class="pi-float-1" d="M15 7c1-1 2-1 3 0s2 1 3 0"/>
+              <path class="pi-float-2" d="M15 11c1-1 2-1 3 0s2 1 3 0"/>
+            </svg>
+            義式濃縮 Crema
+          </span>
+          <span class="roast-tag">
+            <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path class="pi-grow-x" d="M16 13H3"/><path class="pi-grow-x" d="M16 17H3"/>
+              <path class="pi-jelly" d="m7.2 7.9-3.388 2.5A2 2 0 0 0 3 12.01V20a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-8.654c0-2-2.44-6.026-6.44-8.026a1 1 0 0 0-1.082.057L10.4 5.6"/>
+              <circle class="pi-float-1" cx="9" cy="7" r="2"/>
+            </svg>
+            季節特調與手作甜點
+          </span>
         </div>
         <div class="hero-actions">
-          <a class="button button-dark" href="#recipes">快速查找食譜 <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href="brew-guide.html">進入吧台手沖筆記 <span aria-hidden="true">→</span></a>
+          <a class="button button-dark" href="#recipes">
+            快速查找食譜
+            <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path class="pi-shoot" d="M7 7h10v10"/><path class="pi-shoot" d="M7 17 17 7"/>
+            </svg>
+          </a>
+          <a class="button button-secondary" href="brew-guide.html">
+            進入吧台手沖筆記
+            <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path class="pi-slide-r" d="M5 12h14"/><path class="pi-slide-r" d="m12 5 7 7-7 7"/>
+            </svg>
+          </a>
         </div>
-        <div class="hero-note"><span class="note-line"></span><span>分類瀏覽或搜尋材料，快速查找配方。</span></div>
+        <div class="hero-note">
+          <span class="note-line"></span>
+          <span>分類瀏覽或搜尋材料，快速查找配方。</span>
+        </div>
       </div>
+
       <div class="hero-art" aria-hidden="true">
         <div class="art-sun"></div>
-        <div class="art-stamp">BARISTA'S LOG<br><span>92°C · 1:15 · FRESH ROAST</span></div>
+        <!-- Landify / Untitled UI 風格懸浮吧台資訊卡 -->
+        <div class="art-stamp">
+          <div class="stamp-icon">
+            <svg class="pulso-icon" viewBox="0 0 24 24" fill="none">
+              <path class="pi-press" d="M10 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/>
+              <path class="pi-float-1" d="M15 7c1-1 2-1 3 0s2 1 3 0"/>
+              <path class="pi-float-2" d="M15 11c1-1 2-1 3 0s2 1 3 0"/>
+            </svg>
+          </div>
+          <div>
+            <strong>BARISTA'S LOG</strong>
+            <span>92°C · 1:15 · FRESH ROAST</span>
+          </div>
+        </div>
+
         <svg class="hero-cup" viewBox="0 0 420 380" fill="none">
           <!-- 胡桃木杯墊與柔和陰影 -->
           <ellipse cx="210" cy="326" rx="152" ry="24" fill="#140b07" opacity=".55"/>
@@ -75,7 +149,13 @@
           </g>
           <circle cx="92" cy="90" r="6" fill="#c89464"/><circle cx="342" cy="92" r="5" fill="#b35a42"/>
         </svg>
-        <span class="art-caption">一口一口，記住濃縮與手沖的香氣。</span>
+
+        <span class="art-caption">
+          <svg class="pulso-icon" viewBox="0 0 24 24" fill="none">
+            <path class="pi-twinkle" d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/>
+          </svg>
+          一口一口，記住濃縮與手沖的香氣。
+        </span>
       </div>
     </section>
 
@@ -86,24 +166,70 @@
           <h2 id="recipes-title">快速查找食譜</h2>
           <p class="section-intro">選擇咖啡或甜點分類，或直接搜尋配方名稱與材料。</p>
         </div>
-        <a class="all-link" href="brew-guide.html">閱讀沖煮指南 <span aria-hidden="true">↗</span></a>
+        <a class="all-link" href="brew-guide.html">
+          閱讀沖煮指南
+          <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path class="pi-shoot" d="M7 7h10v10"/><path class="pi-shoot" d="M7 17 17 7"/>
+          </svg>
+        </a>
       </div>
 
       <div class="recipe-tools">
         <label class="search-box">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+          <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+          </svg>
           <span class="visually-hidden">搜尋配方</span>
           <input id="recipe-search" type="search" placeholder="搜尋配方名稱或材料…" autocomplete="off">
           <button id="search-clear" class="search-clear" type="button" aria-label="清除搜尋條件" hidden>×</button>
           <kbd>/</kbd>
         </label>
         <div class="filter-list" role="group" aria-label="配方分類">
-          <button class="filter-chip is-active" type="button" data-category="全部" aria-pressed="true">全部 <span id="recipe-total">00</span></button>
-          <button class="filter-chip" type="button" data-category="冰咖啡" aria-pressed="false">冰咖啡</button>
-          <button class="filter-chip" type="button" data-category="奶咖" aria-pressed="false">奶咖</button>
-          <button class="filter-chip" type="button" data-category="手沖" aria-pressed="false">手沖</button>
-          <button class="filter-chip" type="button" data-category="特調" aria-pressed="false">特調</button>
-          <button class="filter-chip" type="button" data-category="甜點" aria-pressed="false">甜點</button>
+          <button class="filter-chip is-active" type="button" data-category="全部" aria-pressed="true">
+            <svg class="pulso-icon chip-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path class="pi-twinkle" d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/>
+            </svg>
+            全部 <span id="recipe-total">00</span>
+          </button>
+          <button class="filter-chip" type="button" data-category="冰咖啡" aria-pressed="false">
+            <svg class="pulso-icon chip-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path class="pi-sway" d="M5.116 4.104A1 1 0 0 1 6.11 3h11.78a1 1 0 0 1 .994 1.105L17.19 20.21A2 2 0 0 1 15.2 22H8.8a2 2 0 0 1-2-1.79z"/>
+              <path d="M6 12a5 5 0 0 1 6 0 5 5 0 0 0 6 0"/>
+            </svg>
+            冰咖啡
+          </button>
+          <button class="filter-chip" type="button" data-category="奶咖" aria-pressed="false">
+            <svg class="pulso-icon chip-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path class="pi-sway" d="M8 2h8"/>
+              <path class="pi-sway" d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/>
+              <path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/>
+            </svg>
+            奶咖
+          </button>
+          <button class="filter-chip" type="button" data-category="手沖" aria-pressed="false">
+            <svg class="pulso-icon chip-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path class="pi-drop-1" d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/>
+              <path class="pi-drop-2" d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>
+            </svg>
+            手沖
+          </button>
+          <button class="filter-chip" type="button" data-category="特調" aria-pressed="false">
+            <svg class="pulso-icon chip-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path class="pi-sway" d="m6 8 1.75 12.28a2 2 0 0 0 2 1.72h4.54a2 2 0 0 0 2-1.72L18 8"/>
+              <path class="pi-sway" d="M5 8h14"/>
+              <path class="pi-sway" d="M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/>
+              <path class="pi-swing" d="m12 8 1-6h2"/>
+            </svg>
+            特調
+          </button>
+          <button class="filter-chip" type="button" data-category="甜點" aria-pressed="false">
+            <svg class="pulso-icon chip-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path class="pi-grow-x" d="M16 13H3"/><path class="pi-grow-x" d="M16 17H3"/>
+              <path class="pi-jelly" d="m7.2 7.9-3.388 2.5A2 2 0 0 0 3 12.01V20a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-8.654c0-2-2.44-6.026-6.44-8.026a1 1 0 0 0-1.082.057L10.4 5.6"/>
+              <circle class="pi-float-1" cx="9" cy="7" r="2"/>
+            </svg>
+            甜點
+          </button>
         </div>
       </div>
 
@@ -112,10 +238,14 @@
       </div>
       <div class="recipe-grid" id="recipe-grid" aria-live="polite"></div>
       <div class="empty-state" id="empty-state" hidden>
-        <span aria-hidden="true">☕</span>
+        <span class="empty-icon" aria-hidden="true">
+          <svg class="pulso-icon" viewBox="0 0 24 24" fill="none">
+            <path class="pi-float-1" d="M10 2v2"/><path class="pi-float-2" d="M14 2v2"/><path class="pi-press" d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path class="pi-float-3" d="M6 2v2"/>
+          </svg>
+        </span>
         <h3>還沒找到這份配方。</h3>
         <p>試著換個關鍵字，或切回「全部」看看。</p>
-        <button id="reset-filters" class="button button-outline" type="button">顯示全部配方</button>
+        <button id="reset-filters" class="button button-secondary" type="button">顯示全部配方</button>
       </div>
     </section>
 
@@ -125,18 +255,61 @@
           <p class="eyebrow">A NOTE ON BREWING <span>／ 02</span></p>
           <h2 id="method-title">沖煮時，<br><em>先改一件事。</em></h2>
           <p>記下粉水比、研磨和注水節奏。每次只調整一個變因，才知道風味為什麼改變。</p>
-          <a class="button button-outline" href="brew-guide.html">打開手沖筆記 <span aria-hidden="true">↗</span></a>
+          <a class="button button-outline" href="brew-guide.html">
+            打開手沖筆記
+            <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path class="pi-shoot" d="M7 7h10v10"/><path class="pi-shoot" d="M7 17 17 7"/>
+            </svg>
+          </a>
         </div>
         <div class="method-steps" aria-label="沖煮筆記的三個步驟">
-          <article class="method-step"><span class="step-number">01</span><div><h3>先記下起點</h3><p>豆子、比例、研磨度和水溫。</p></div><span class="step-mark" aria-hidden="true">＋</span></article>
-          <article class="method-step"><span class="step-number">02</span><div><h3>喝一口再描述</h3><p>記錄酸甜、香氣、厚薄與餘韻。</p></div><span class="step-mark" aria-hidden="true">≈</span></article>
-          <article class="method-step"><span class="step-number">03</span><div><h3>只改一個變因</h3><p>讓下一杯成為清楚的比較。</p></div><span class="step-mark" aria-hidden="true">↗</span></article>
+          <article class="method-step">
+            <span class="step-number">01</span>
+            <div>
+              <h3>先記下起點</h3>
+              <p>豆子、比例、研磨度和水溫。</p>
+            </div>
+            <span class="step-mark" aria-hidden="true">
+              <svg class="pulso-icon" viewBox="0 0 24 24" fill="none">
+                <path d="M12 3v18"/><path class="pi-sway" d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path class="pi-sway" d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path class="pi-sway" d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/>
+              </svg>
+            </span>
+          </article>
+          <article class="method-step">
+            <span class="step-number">02</span>
+            <div>
+              <h3>喝一口再描述</h3>
+              <p>記錄酸甜、香氣、厚薄與餘韻。</p>
+            </div>
+            <span class="step-mark" aria-hidden="true">
+              <svg class="pulso-icon" viewBox="0 0 24 24" fill="none">
+                <path class="pi-float-1" d="M10 2v2"/><path class="pi-float-2" d="M14 2v2"/><path class="pi-press" d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path class="pi-float-3" d="M6 2v2"/>
+              </svg>
+            </span>
+          </article>
+          <article class="method-step">
+            <span class="step-number">03</span>
+            <div>
+              <h3>只改一個變因</h3>
+              <p>讓下一杯成為清楚的比較。</p>
+            </div>
+            <span class="step-mark" aria-hidden="true">
+              <svg class="pulso-icon" viewBox="0 0 24 24" fill="none">
+                <path class="pi-shoot" d="M7 7h10v10"/><path class="pi-shoot" d="M7 17 17 7"/>
+              </svg>
+            </span>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="about-section shell" id="about" aria-labelledby="about-title">
-      <div class="about-mark" aria-hidden="true">C<br><span>✳</span></div>
+      <div class="about-mark" aria-hidden="true">
+        <svg class="pulso-icon" viewBox="0 0 24 24" fill="none">
+          <path class="pi-wobble" d="M19.07 4.93A10 7 -45 0 0 4.93 19.07 10 7 -45 0 0 19.07 4.93z"/>
+          <path d="M4.93 19.07C11 19 13 5 19.07 4.93"/>
+        </svg>
+      </div>
       <div>
         <p class="eyebrow">ABOUT THESE NOTES</p>
         <h2 id="about-title">工作時查得到，<br class="mobile-break">製作更順手。</h2>
@@ -152,7 +325,13 @@
   </footer>
 
   <dialog class="recipe-dialog" id="recipe-dialog" aria-labelledby="dialog-title">
-    <form method="dialog"><button class="dialog-close" aria-label="關閉配方明細">×</button></form>
+    <form method="dialog">
+      <button class="dialog-close" aria-label="關閉配方明細">
+        <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+        </svg>
+      </button>
+    </form>
     <div class="dialog-content" id="dialog-content"></div>
   </dialog>
 </body>

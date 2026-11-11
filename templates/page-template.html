@@ -9,22 +9,32 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳到主要內容</a>
-  <header class="site-header shell">
-    <a class="brand" href="../index.html" aria-label="萃光咖啡筆記首頁">
-      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M9 14h20v12a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8V14Z"/><path d="M29 18h3a4 4 0 0 1 0 8h-4M12 9c0-2 2-2 2-4m6 4c0-2 2-2 2-4m5 4c0-2 2-2 2-4"/></svg></span>
-      <span class="brand-copy"><strong>萃光</strong><small>COFFEE NOTES</small></span>
-    </a>
-    <nav class="main-nav" aria-label="主要導覽">
-      <a class="nav-link" href="../index.html">配方索引</a>
-      <a class="nav-link" href="../brew-guide.html">沖煮指南</a>
-      <a class="nav-link" href="../index.html#about">關於筆記</a>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner shell">
+      <a class="brand" href="../index.html" aria-label="萃光咖啡筆記首頁">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="pulso-icon" viewBox="0 0 24 24" fill="none">
+            <path class="pi-float-1" d="M10 2v2"/><path class="pi-float-2" d="M14 2v2"/><path class="pi-float-3" d="M6 2v2"/>
+            <path class="pi-press" d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/>
+          </svg>
+        </span>
+        <span class="brand-copy"><strong>萃光</strong><small>COFFEE ROAST &amp; NOTES</small></span>
+      </a>
+      <nav class="main-nav" aria-label="主要導覽">
+        <a class="nav-link" href="../index.html">配方索引</a>
+        <a class="nav-link" href="../brew-guide.html">沖煮指南</a>
+        <a class="nav-link nav-about" href="../index.html#about">關於筆記</a>
+      </nav>
+    </div>
   </header>
   <main id="main-content" class="guide-page">
     <section class="guide-hero shell" aria-labelledby="page-title">
       <div class="guide-hero-copy">
         <a class="back-link" href="../index.html">← 回到配方索引</a>
-        <p class="eyebrow">{{PAGE_LABEL}}</p>
+        <div class="eyebrow-badge">
+          <span class="eyebrow-dot"></span>
+          <span>{{PAGE_LABEL}}</span>
+        </div>
         <h1 id="page-title">{{PAGE_TITLE}}</h1>
         <p>{{PAGE_SUMMARY}}</p>
       </div>
@@ -36,7 +46,7 @@
     </article>
   </main>
   <footer class="site-footer shell">
-    <a class="footer-brand" href="../index.html">萃光 <span>COFFEE NOTES</span></a>
+    <a class="footer-brand" href="../index.html">萃光 <span>COFFEE ROAST &amp; NOTES</span></a>
     <p>用一點耐心，找到喜歡的那一杯。</p>
     <a class="back-top" href="#main-content">回到頁首 ↑</a>
   </footer>

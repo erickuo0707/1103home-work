@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6efe4">
+  <meta name="theme-color" content="#f7f2ea">
   <meta name="description" content="從粉水比、悶蒸到分段注水，建立一份可以反覆調整的手沖咖啡筆記。">
   <title>手沖入門筆記｜萃光咖啡筆記</title>
   <link rel="stylesheet" href="assets/site.css">
@@ -11,27 +11,63 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳到主要內容</a>
-  <header class="site-header shell">
-    <a class="brand" href="index.html" aria-label="萃光咖啡筆記首頁">
-      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M9 14h20v12a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8V14Z"/><path d="M29 18h3a4 4 0 0 1 0 8h-4M12 9c0-2 2-2 2-4m6 4c0-2 2-2 2-4m5 4c0-2 2-2 2-4"/></svg></span>
-      <span class="brand-copy"><strong>萃光</strong><small>COFFEE ROAST &amp; NOTES</small></span>
-    </a>
-    <nav class="main-nav" aria-label="主要導覽">
-      <a class="nav-link" href="index.html">配方索引</a>
-      <a class="nav-link is-current" href="brew-guide.html" aria-current="page">沖煮指南</a>
-      <a class="nav-link nav-about" href="index.html#about">關於筆記</a>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner shell">
+      <a class="brand" href="index.html" aria-label="萃光咖啡筆記首頁">
+        <span class="brand-mark" aria-hidden="true">
+          <svg class="pulso-icon" viewBox="0 0 24 24" fill="none">
+            <path class="pi-float-1" d="M10 2v2"/><path class="pi-float-2" d="M14 2v2"/><path class="pi-float-3" d="M6 2v2"/>
+            <path class="pi-press" d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/>
+          </svg>
+        </span>
+        <span class="brand-copy"><strong>萃光</strong><small>COFFEE ROAST &amp; NOTES</small></span>
+      </a>
+      <nav class="main-nav" aria-label="主要導覽">
+        <a class="nav-link" href="index.html">
+          <svg class="pulso-icon nav-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path class="pi-float-1" d="M10 2v2"/><path class="pi-float-2" d="M14 2v2"/><path class="pi-press" d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path class="pi-float-3" d="M6 2v2"/>
+          </svg>
+          配方索引
+        </a>
+        <a class="nav-link is-current" href="brew-guide.html" aria-current="page">
+          <svg class="pulso-icon nav-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path class="pi-drop-1" d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/>
+            <path class="pi-drop-2" d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>
+          </svg>
+          沖煮指南
+        </a>
+        <a class="nav-link nav-about" href="index.html#about">
+          <svg class="pulso-icon nav-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v16"/><path class="pi-press" d="M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z"/>
+          </svg>
+          關於筆記
+        </a>
+      </nav>
+    </div>
   </header>
 
   <main id="main-content" class="guide-page">
     <section class="guide-hero shell" aria-labelledby="guide-title">
       <div class="guide-hero-copy">
-        <a class="back-link" href="index.html">← 回到配方索引</a>
-        <p class="eyebrow">BREWING NOTE <span>／ 01</span></p>
+        <a class="back-link" href="index.html">
+          <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>
+          </svg>
+          回到配方索引
+        </a>
+        <div class="eyebrow-badge">
+          <span class="eyebrow-dot"></span>
+          <span>BREWING NOTE ／ 01</span>
+        </div>
         <h1 id="guide-title">先讓手沖，<br><em>變成可重複的流程。</em></h1>
         <p>不用追求一次沖出完美答案。先固定幾個起始參數，再練習辨認每一個改變帶來的差異。</p>
       </div>
-      <div class="guide-stamp" aria-hidden="true"><span id="stamp-coffee">15 g</span><i>＋</i><span id="stamp-water">225 g</span><small>COFFEE / WATER</small></div>
+      <div class="guide-stamp" aria-hidden="true">
+        <span id="stamp-coffee">15 g</span>
+        <i>＋</i>
+        <span id="stamp-water">225 g</span>
+        <small>COFFEE / WATER</small>
+      </div>
     </section>
 
     <section class="guide-content shell" aria-label="手沖流程">
@@ -41,22 +77,60 @@
         <div class="brew-timeline">
           <article class="brew-step">
             <span class="brew-step-no">01</span>
-            <div><h3>設定一組起始比例</h3><p>先試試咖啡粉 15 克、注水 225 克，粉水比約 1:15。這是練習用的起點，豆子和口味不同時可以調整。</p><span class="step-tag">粉水比</span></div>
+            <div>
+              <h3>設定一組起始比例</h3>
+              <p>先試試咖啡粉 15 克、注水 225 克，粉水比約 1:15。這是練習用的起點，豆子和口味不同時可以調整。</p>
+              <span class="step-tag">
+                <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 3v18"/><path class="pi-sway" d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path class="pi-sway" d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path class="pi-sway" d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/>
+                </svg>
+                粉水比 1:15
+              </span>
+            </div>
           </article>
           <article class="brew-step">
             <span class="brew-step-no">02</span>
-            <div><h3>悶蒸，讓粉層均勻吸水</h3><p>以約 35 克熱水潤濕咖啡粉，等待約 30 至 40 秒。留意粉層膨脹和排氣狀況，下一次可依烘焙度調整。</p><span class="step-tag">悶蒸 30–40 秒</span></div>
+            <div>
+              <h3>悶蒸，讓粉層均勻吸水</h3>
+              <p>以約 35 克熱水潤濕咖啡粉，等待約 30 至 40 秒。留意粉層膨脹和排氣狀況，下一次可依烘焙度調整。</p>
+              <span class="step-tag">
+                <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <line x1="10" x2="14" y1="2" y2="2"/><line class="pi-spin" x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/>
+                </svg>
+                悶蒸 30–40 秒
+              </span>
+            </div>
           </article>
           <article class="brew-step">
             <span class="brew-step-no">03</span>
-            <div><h3>分段注水至目標水量</h3><p>用穩定的小水流繞圈注水，分成數段慢慢加到 225 克。每段水位稍微下降後再繼續，避免一次大水量沖亂粉層。</p><span class="step-tag">保持節奏穩定</span></div>
+            <div>
+              <h3>分段注水至目標水量</h3>
+              <p>用穩定的小水流繞圈注水，分成數段慢慢加到 225 克。每段水位稍微下降後再繼續，避免一次大水量沖亂粉層。</p>
+              <span class="step-tag">
+                <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path class="pi-drop-1" d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/>
+                  <path class="pi-drop-2" d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>
+                </svg>
+                保持節奏穩定
+              </span>
+            </div>
           </article>
           <article class="brew-step">
             <span class="brew-step-no">04</span>
-            <div><h3>先描述風味，再決定要改什麼</h3><p>記下酸甜、香氣、厚薄和餘韻。如果覺得太淡，下一杯可以先試著研磨細一點；如果太苦或乾澀，則先檢查研磨與萃取時間。</p><span class="step-tag">一次改一個變因</span></div>
+            <div>
+              <h3>先描述風味，再決定要改什麼</h3>
+              <p>記下酸甜、香氣、厚薄和餘韻。如果覺得太淡，下一杯可以先試著研磨細一點；如果太苦或乾澀，則先檢查研磨與萃取時間。</p>
+              <span class="step-tag">
+                <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path class="pi-twinkle" d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/>
+                </svg>
+                一次改一個變因
+              </span>
+            </div>
           </article>
         </div>
       </div>
+
       <aside class="guide-aside">
         <div class="aside-card" aria-labelledby="calc-title">
           <p class="eyebrow">RATIO HELPER</p>
@@ -73,7 +147,7 @@
             <div class="calc-results" aria-live="polite">
               <div class="calc-stat">
                 <small>建議悶蒸水量</small>
-                <strong id="calc-bloom">35 g</strong>
+                <strong id="calc-bloom">約 35 g</strong>
               </div>
               <div class="calc-stat">
                 <small>目標總注水量</small>
@@ -81,7 +155,14 @@
               </div>
             </div>
           </div>
-          <div class="aside-note"><span aria-hidden="true">✳</span><p>以上為練習用起始比例，實際水量可依烘焙度與個人濃淡偏好微調。</p></div>
+          <div class="aside-note">
+            <span aria-hidden="true">
+              <svg class="pulso-icon" viewBox="0 0 24 24" fill="none">
+                <path class="pi-twinkle" d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/>
+              </svg>
+            </span>
+            <p>以上為練習用起始比例，實際水量可依烘焙度與個人濃淡偏好微調。</p>
+          </div>
         </div>
 
         <div class="aside-card">
@@ -93,18 +174,35 @@
             <li><span>03</span>研磨度與總時間</li>
             <li><span>04</span>喝起來的風味印象</li>
           </ol>
-          <div class="aside-note"><span aria-hidden="true">✳</span><p>描述可以很簡單：「入口明亮、尾韻偏乾」。先記下自己的感覺，就能慢慢建立比較基準。</p></div>
+          <div class="aside-note">
+            <span aria-hidden="true">
+              <svg class="pulso-icon" viewBox="0 0 24 24" fill="none">
+                <path class="pi-wobble" d="M19.07 4.93A10 7 -45 0 0 4.93 19.07 10 7 -45 0 0 19.07 4.93z"/>
+                <path d="M4.93 19.07C11 19 13 5 19.07 4.93"/>
+              </svg>
+            </span>
+            <p>描述可以很簡單：「入口明亮、尾韻偏乾」。先記下自己的感覺，就能慢慢建立比較基準。</p>
+          </div>
         </div>
       </aside>
     </section>
 
     <section class="guide-end shell">
-      <div><p class="eyebrow">NEXT CUP, NEW CLUE</p><h2>下一杯，試著改變一個地方。</h2></div>
-      <a class="button button-dark" href="index.html#recipes">回去找一份配方 <span aria-hidden="true">↗</span></a>
+      <div>
+        <p class="eyebrow">NEXT CUP, NEW CLUE</p>
+        <h2>下一杯，試著改變一個地方。</h2>
+      </div>
+      <a class="button button-dark" href="index.html#recipes">
+        回去找一份配方
+        <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path class="pi-shoot" d="M7 7h10v10"/><path class="pi-shoot" d="M7 17 17 7"/>
+        </svg>
+      </a>
     </section>
   </main>
+
   <footer class="site-footer shell">
-    <a class="footer-brand" href="index.html">萃光 <span>COFFEE NOTES</span></a>
+    <a class="footer-brand" href="index.html">萃光 <span>COFFEE ROAST &amp; NOTES</span></a>
     <p>用一點耐心，找到喜歡的那一杯。</p>
     <a class="back-top" href="#main-content">回到頁首 ↑</a>
   </footer>
