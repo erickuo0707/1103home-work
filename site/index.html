@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2e9">
+  <meta name="description" content="萃光咖啡筆記，整理咖啡配方、手沖比例與日常風味實驗。">
+  <title>萃光咖啡筆記｜把喜歡的味道慢慢調出來</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要內容</a>
+  <header class="site-header shell">
+    <a class="brand" href="index.html" aria-label="萃光咖啡筆記首頁">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none"><path d="M9 14h20v12a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8V14Z"/><path d="M29 18h3a4 4 0 0 1 0 8h-4M12 9c0-2 2-2 2-4m6 4c0-2 2-2 2-4m5 4c0-2 2-2 2-4"/></svg>
+      </span>
+      <span class="brand-copy"><strong>萃光</strong><small>COFFEE NOTES</small></span>
+    </a>
+    <nav class="main-nav" aria-label="主要導覽">
+      <a class="nav-link is-current" href="index.html">配方索引</a>
+      <a class="nav-link" href="brew-guide.html">沖煮指南</a>
+      <a class="nav-link nav-about" href="#about">關於筆記</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> 一間持續更新的咖啡小實驗室</p>
+        <h1 id="hero-title">把喜歡的味道，<br><em>慢慢調出來。</em></h1>
+        <p class="hero-description">從一份配方開始，記下比例、風味和下一次想改變的小地方。每杯都可以有自己的答案。</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#recipes">逛逛配方 <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="brew-guide.html">從手沖開始 <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-note"><span class="note-line"></span><span>配方是起點，不是標準答案。</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-sun"></div>
+        <div class="art-stamp">SLOW<br>BREW<br><span>✳</span></div>
+        <svg class="hero-cup" viewBox="0 0 420 380" fill="none">
+          <ellipse cx="213" cy="322" rx="142" ry="22" fill="#c9c4b4" opacity=".44"/>
+          <path d="M103 116h221l-18 157c-3 27-25 47-52 47h-80c-27 0-49-20-52-47l-19-157Z" fill="#f9f6ec" stroke="#263a31" stroke-width="5"/>
+          <path d="M323 148h31c30 0 43 20 40 47-3 25-18 39-46 39h-24" stroke="#263a31" stroke-width="5"/>
+          <path d="M117 143h193" stroke="#d7d1c1" stroke-width="3"/>
+          <path d="M153 102c-7-17 10-21 3-38m46 39c-7-17 10-21 3-38m46 38c-7-17 10-21 3-38" stroke="#738269" stroke-width="5" stroke-linecap="round"/>
+          <path d="M145 173c38 22 82 22 137 0" stroke="#b66d52" stroke-width="5" stroke-linecap="round"/>
+          <path d="M180 205c8-13 20-16 31-8 10-9 25-5 27 8 1 15-19 29-30 35-12-6-35-20-28-35Z" fill="#9d7455"/>
+          <path d="M211 236v-32m0 19-12-11m12 5 13-12" stroke="#e8dfcd" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M94 278c36 16 83 21 135 18 42-3 75-9 104-21" stroke="#d2cabc" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="95" cy="92" r="7" fill="#b66d52"/><circle cx="343" cy="94" r="5" fill="#738269"/><path d="m331 283 5 11 12 2-9 8 2 12-10-6-10 6 2-12-9-8 12-2 5-11Z" fill="#d5a45d"/>
+        </svg>
+        <span class="art-caption">一口一口，記住風味。</span>
+      </div>
+    </section>
+
+    <section class="recipe-section shell" id="recipes" aria-labelledby="recipes-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow section-kicker">THE RECIPE INDEX <span>／ 01</span></p>
+          <h2 id="recipes-title">今天想喝哪一種？</h2>
+          <p class="section-intro">先選一個方向，再找到剛好合口味的比例。</p>
+        </div>
+        <a class="all-link" href="brew-guide.html">閱讀沖煮指南 <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <div class="recipe-tools">
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+          <span class="visually-hidden">搜尋配方</span>
+          <input id="recipe-search" type="search" placeholder="搜尋風味或配方名稱…" autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <div class="filter-list" role="group" aria-label="配方分類">
+          <button class="filter-chip is-active" type="button" data-category="全部" aria-pressed="true">全部 <span id="recipe-total">00</span></button>
+          <button class="filter-chip" type="button" data-category="冰咖啡" aria-pressed="false">冰咖啡</button>
+          <button class="filter-chip" type="button" data-category="奶咖" aria-pressed="false">奶咖</button>
+          <button class="filter-chip" type="button" data-category="手沖" aria-pressed="false">手沖</button>
+          <button class="filter-chip" type="button" data-category="特調" aria-pressed="false">特調</button>
+        </div>
+      </div>
+
+      <p class="results-count" id="results-count" aria-live="polite">正在整理配方…</p>
+      <div class="recipe-grid" id="recipe-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <span aria-hidden="true">☕</span>
+        <h3>還沒找到這杯。</h3>
+        <p>試著換個關鍵字，或切回「全部」看看。</p>
+      </div>
+    </section>
+
+    <section class="method-band" aria-labelledby="method-title">
+      <div class="shell method-inner">
+        <div class="method-copy">
+          <p class="eyebrow">A NOTE ON BREWING <span>／ 02</span></p>
+          <h2 id="method-title">沖煮時，<br><em>先改一件事。</em></h2>
+          <p>記下粉水比、研磨和注水節奏。每次只調整一個變因，才知道風味為什麼改變。</p>
+          <a class="button button-outline" href="brew-guide.html">打開手沖筆記 <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="method-steps" aria-label="沖煮筆記的三個步驟">
+          <article class="method-step"><span class="step-number">01</span><div><h3>先記下起點</h3><p>豆子、比例、研磨度和水溫。</p></div><span class="step-mark" aria-hidden="true">＋</span></article>
+          <article class="method-step"><span class="step-number">02</span><div><h3>喝一口再描述</h3><p>記錄酸甜、香氣、厚薄與餘韻。</p></div><span class="step-mark" aria-hidden="true">≈</span></article>
+          <article class="method-step"><span class="step-number">03</span><div><h3>只改一個變因</h3><p>讓下一杯成為清楚的比較。</p></div><span class="step-mark" aria-hidden="true">↗</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section shell" id="about" aria-labelledby="about-title">
+      <div class="about-mark" aria-hidden="true">C<br><span>✳</span></div>
+      <div>
+        <p class="eyebrow">ABOUT THESE NOTES</p>
+        <h2 id="about-title">把日常的好喝，<br class="mobile-break">留下來。</h2>
+      </div>
+      <p class="about-copy">這裡收錄的是配方起點與沖煮觀察。材料、器材和個人口味都會影響結果，所以每份筆記都保留調整空間。</p>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <a class="footer-brand" href="index.html">萃光 <span>COFFEE NOTES</span></a>
+    <p>用一點耐心，找到喜歡的那一杯。</p>
+    <a class="back-top" href="#main-content">回到頁首 ↑</a>
+  </footer>
+
+  <dialog class="recipe-dialog" id="recipe-dialog" aria-labelledby="dialog-title">
+    <form method="dialog"><button class="dialog-close" aria-label="關閉配方明細">×</button></form>
+    <div class="dialog-content" id="dialog-content"></div>
+  </dialog>
+</body>
+</html>
