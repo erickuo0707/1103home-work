@@ -44,6 +44,17 @@ function categoryIllustration(category) {
           <rect x="46" y="48" width="8" height="8" rx="1.5" transform="rotate(12 46 48)" stroke="#697963" stroke-width="1.8"/>
           <path d="M48 12l-6 26" stroke="#3f5041" stroke-width="2" stroke-linecap="round"/>
         </svg>`;
+    case "甜點":
+      return `
+        <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
+          <ellipse cx="45" cy="70" rx="29" ry="5" stroke="#a8a18e" stroke-width="1.8"/>
+          <path d="m18 50 29-23 24 19-28 24-25-20Z" fill="#e9c98f" stroke="#3f5041" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M18 50v9l25 15v-9L18 50Zm25 15 28-19v9L43 74v-9Z" fill="#c58b5f" stroke="#3f5041" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="m24 49 23-18 17 14-23 18-17-14Z" fill="#f8f1df" stroke="#3f5041" stroke-width="1.8" stroke-linejoin="round"/>
+          <path d="M28 46c7-6 13-11 20-15 5 4 10 8 15 13" stroke="#b66d52" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="48" cy="33" r="4" fill="#b66d52"/>
+          <path d="M48 29c-2-3-5-3-6-2m10 4c3-3 5-2 6-1" stroke="#697963" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>`;
     case "冰咖啡":
       return `
         <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
@@ -168,8 +179,8 @@ function renderDialogContent(recipe, scale = 1) {
           <span>難度：${escapeHTML(recipe.level)}</span>
           <span>時間：${escapeHTML(recipe.time)}</span>
         </div>
-        <div class="serving-scaler" role="group" aria-label="調整配方杯數">
-          <span class="scaler-label">杯數換算</span>
+        <div class="serving-scaler" role="group" aria-label="調整配方份量">
+          <span class="scaler-label">份量換算</span>
           ${[1, 2, 3]
             .map(
               (factor) =>
