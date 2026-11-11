@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6efe4">
-  <meta name="description" content="為咖啡廳工作時快速查閱食譜而建立，整理咖啡飲品與甜點的用量和製作步驟。">
-  <title>萃光咖啡筆記｜咖啡廳配方快速查詢</title>
+  <meta name="theme-color" content="#140d09">
+  <meta name="description" content="萃光咖啡筆記，整理咖啡飲品、甜點配方與手沖心得。">
+  <title>萃光咖啡筆記｜把喜歡的味道慢慢調出來</title>
   <link rel="stylesheet" href="assets/site.css">
   <script src="assets/site.js" defer></script>
 </head>
@@ -53,17 +53,17 @@
       <div class="hero-copy">
         <div class="eyebrow-badge">
           <span class="eyebrow-dot"></span>
-          <span>咖啡廳工作用的配方查詢筆記</span>
+          <span>SPECIALTY COFFEE BAR &amp; PATISSERIE LOG</span>
         </div>
-        <h1 id="hero-title">咖啡廳工作用配方，<br><em>需要時快速查找。</em></h1>
-        <p class="hero-description">把工作時常用的咖啡飲品與甜點食譜集中整理，搜尋配方名稱或材料，就能快速查看用量和製作步驟。</p>
+        <h1 id="hero-title">把喜歡的味道，<br><em>慢慢調出來。</em></h1>
+        <p class="hero-description">像走進熟悉的深夜咖啡館，從義式濃縮、手沖單品到店內手作甜點，清楚記錄每一份材料比例、萃取細節與微調靈感。</p>
         <div class="hero-roast-tags" aria-label="吧台日常沖煮與烘焙方向">
           <span class="roast-tag">
             <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path class="pi-wobble" d="M19.07 4.93A10 7 -45 0 0 4.93 19.07 10 7 -45 0 0 19.07 4.93z"/>
               <path d="M4.93 19.07C11 19 13 5 19.07 4.93"/>
             </svg>
-            淺中焙手沖
+            淺中焙手沖單品
           </span>
           <span class="roast-tag">
             <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -84,13 +84,13 @@
         </div>
         <div class="hero-actions">
           <a class="button button-dark" href="#recipes">
-            快速查找食譜
+            翻閱今日咖啡與甜點單
             <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path class="pi-shoot" d="M7 7h10v10"/><path class="pi-shoot" d="M7 17 17 7"/>
             </svg>
           </a>
           <a class="button button-secondary" href="brew-guide.html">
-            進入吧台手沖筆記
+            手沖比例與試算
             <svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path class="pi-slide-r" d="M5 12h14"/><path class="pi-slide-r" d="m12 5 7 7-7 7"/>
             </svg>
@@ -98,7 +98,7 @@
         </div>
         <div class="hero-note">
           <span class="note-line"></span>
-          <span>分類瀏覽或搜尋材料，快速查找配方。</span>
+          <span>配方是起點，不是標準答案。</span>
         </div>
       </div>
 
@@ -121,7 +121,7 @@
 
         <svg class="hero-cup" viewBox="0 0 420 380" fill="none">
           <!-- 胡桃木杯墊與柔和陰影 -->
-          <ellipse cx="210" cy="326" rx="152" ry="24" fill="#140b07" opacity=".55"/>
+          <ellipse cx="210" cy="326" rx="152" ry="24" fill="#090503" opacity=".7"/>
           <ellipse cx="210" cy="316" rx="134" ry="18" fill="#6b4228" stroke="#9c6b49" stroke-width="2.5"/>
           <!-- 陶瓷咖啡杯身 -->
           <path d="M104 128h212l-18 146c-3 28-26 48-54 48h-68c-28 0-51-20-54-48L104 128Z" fill="#faf3e8" stroke="#3b2316" stroke-width="5"/>
@@ -163,8 +163,8 @@
       <div class="section-heading">
         <div>
           <p class="eyebrow section-kicker">THE CAFÉ MENU &amp; RECIPE INDEX <span>／ 01</span></p>
-          <h2 id="recipes-title">快速查找食譜</h2>
-          <p class="section-intro">選擇咖啡或甜點分類，或直接搜尋配方名稱與材料。</p>
+          <h2 id="recipes-title">今天想調哪一杯？</h2>
+          <p class="section-intro">依分類翻閱吧台飲品與甜點配方，或直接輸入材料名稱快速搜尋。</p>
         </div>
         <a class="all-link" href="brew-guide.html">
           閱讀沖煮指南
@@ -180,7 +180,7 @@
             <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
           </svg>
           <span class="visually-hidden">搜尋配方</span>
-          <input id="recipe-search" type="search" placeholder="搜尋配方名稱或材料…" autocomplete="off">
+          <input id="recipe-search" type="search" placeholder="搜尋配方名稱或材料（如：濃縮、燕麥奶、乳酪）…" autocomplete="off">
           <button id="search-clear" class="search-clear" type="button" aria-label="清除搜尋條件" hidden>×</button>
           <kbd>/</kbd>
         </label>
@@ -312,15 +312,15 @@
       </div>
       <div>
         <p class="eyebrow">ABOUT THESE NOTES</p>
-        <h2 id="about-title">工作時查得到，<br class="mobile-break">製作更順手。</h2>
+        <h2 id="about-title">把日常的好喝，<br class="mobile-break">留下來。</h2>
       </div>
-      <p class="about-copy">建立這個網站，是為了在咖啡廳工作時方便查看食譜。咖啡飲品與甜點配方集中整理，點開即可查看材料、用量和製作步驟；原始筆記未記錄的資訊會標示待確認。</p>
+      <p class="about-copy">這裡收錄咖啡飲品、甜點配方與沖煮觀察。點開卡片即可查看完整材料用量、份量換算與製作步驟；原始筆記未記錄的資訊也會清楚標示待確認。</p>
     </section>
   </main>
 
   <footer class="site-footer shell">
-    <a class="footer-brand" href="index.html">萃光 <span>COFFEE NOTES</span></a>
-    <p>咖啡廳工作用配方整理｜咖啡飲品與甜點</p>
+    <a class="footer-brand" href="index.html">萃光 <span>COFFEE ROAST &amp; NOTES</span></a>
+    <p>用一點耐心，找到喜歡的那一杯。</p>
     <a class="back-top" href="#main-content">回到頁首 ↑</a>
   </footer>
 
