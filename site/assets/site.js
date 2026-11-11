@@ -400,7 +400,7 @@ function showRecipe(slug) {
 async function loadRecipes() {
   if (!grid) return;
   try {
-    const response = await fetch("content/recipes.json");
+    const response = await fetch("content/recipes.json?v=20261112-icefix", { cache: "no-store" });
     if (!response.ok) throw new Error("配方資料讀取失敗");
     recipes = await response.json();
     updateCategoryCounts();
