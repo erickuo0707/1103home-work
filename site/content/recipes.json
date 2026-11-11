@@ -5,7 +5,6 @@
     "category": "特調",
     "accent": "rose",
     "summary": "用雪酪帶出果香，做一杯清爽、帶點熱帶氣息的美式。",
-    "time": "5 分鐘",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -39,7 +38,6 @@
     "category": "奶咖",
     "accent": "sage",
     "summary": "讓冰牛奶的自然甜感先出場，再接住一份濃縮。",
-    "time": "3 分鐘",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -65,7 +63,6 @@
     "category": "奶咖",
     "accent": "cream",
     "summary": "蜂蜜的圓潤甜味和燕麥奶穀物香，適合做成暖暖的一杯。",
-    "time": "6 分鐘",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -95,7 +92,6 @@
     "category": "特調",
     "accent": "rose",
     "summary": "柑橘汁、氣泡水與濃縮交疊，酸香明亮、口感輕快。",
-    "time": "4 分鐘",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -129,7 +125,6 @@
     "category": "手沖",
     "accent": "sage",
     "summary": "用 1:15 當作練習起點，記錄每次改變後的風味。",
-    "time": "4 分鐘",
     "level": "入門",
     "yield": "約 1 杯",
     "ingredients": [
@@ -155,7 +150,6 @@
     "category": "冰咖啡",
     "accent": "cream",
     "summary": "吧台配方：濃縮咖啡 35 g、水 160 g、冰塊 80 g。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -184,7 +178,6 @@
     "category": "飲品",
     "accent": "cream",
     "summary": "濃縮咖啡加入熱水，依表格加至杯量八分滿。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -209,7 +202,6 @@
     "category": "奶咖",
     "accent": "sage",
     "summary": "濃縮咖啡搭配冰牛奶的吧台配方。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -238,7 +230,6 @@
     "category": "奶咖",
     "accent": "sage",
     "summary": "濃縮咖啡加入蒸煮牛奶，奶量依奶缸刻度操作。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -263,7 +254,6 @@
     "category": "奶咖",
     "accent": "sage",
     "summary": "以濃縮咖啡與奶泡製作的熱飲。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -288,7 +278,6 @@
     "category": "奶咖",
     "accent": "cream",
     "summary": "香草糖漿、鮮奶與濃縮咖啡的冰飲。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -321,7 +310,6 @@
     "category": "奶咖",
     "accent": "cream",
     "summary": "香草糖漿與熱拿鐵的組合。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -350,7 +338,6 @@
     "category": "奶咖",
     "accent": "rose",
     "summary": "黑糖醬、鮮奶與濃縮咖啡的冰飲。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -383,7 +370,6 @@
     "category": "奶咖",
     "accent": "rose",
     "summary": "黑糖醬與熱拿鐵的組合。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -412,7 +398,6 @@
     "category": "冰咖啡",
     "accent": "rose",
     "summary": "濃縮咖啡、檸檬汁與糖調成的冰飲。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -449,7 +434,6 @@
     "category": "冰咖啡",
     "accent": "rose",
     "summary": "以蘋果汁、檸檬汁與濃縮咖啡調製的冰飲。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -490,7 +474,6 @@
     "category": "飲品",
     "accent": "cream",
     "summary": "紅茶底加入糖製成的冰飲。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -519,7 +502,6 @@
     "category": "飲品",
     "accent": "cream",
     "summary": "以熱紅茶底與糖調製。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -548,7 +530,6 @@
     "category": "飲品",
     "accent": "sage",
     "summary": "紅茶加入糖與牛奶的冰飲。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -581,7 +562,6 @@
     "category": "飲品",
     "accent": "sage",
     "summary": "熱紅茶加入糖與奶缸牛奶。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -610,7 +590,6 @@
     "category": "飲品",
     "accent": "cream",
     "summary": "依店內茶底與糖量調製的冰綠茶。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -639,7 +618,6 @@
     "category": "飲品",
     "accent": "cream",
     "summary": "以熱綠茶底與糖調製。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -668,7 +646,6 @@
     "category": "飲品",
     "accent": "rose",
     "summary": "紅茶、蘋果汁、檸檬與蜂蜜的果香冰茶。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -709,7 +686,6 @@
     "category": "飲品",
     "accent": "rose",
     "summary": "冰茶搭配金桔調製的清爽果茶。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -742,7 +718,6 @@
     "category": "飲品",
     "accent": "rose",
     "summary": "以熱茶底搭配鮮桔調製。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -775,7 +750,6 @@
     "category": "飲品",
     "accent": "rose",
     "summary": "紅茶、糖與檸檬汁的簡單組合。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -808,7 +782,6 @@
     "category": "飲品",
     "accent": "rose",
     "summary": "可樂搭配檸檬片的簡單飲品。",
-    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
@@ -837,7 +810,6 @@
     "category": "甜點",
     "accent": "rose",
     "summary": "外層烤出焦香色澤，中心保留濃滑乳酪口感的原味配方。",
-    "time": "烘烤約 28 分鐘",
     "level": "進階",
     "yield": "麵糊約 1,300–1,400 g",
     "ingredients": [
@@ -879,7 +851,6 @@
     "category": "甜點",
     "accent": "cream",
     "summary": "以蛋黃、鮮奶油、牛奶和細砂糖調成滑順布蕾液，再分裝入烤盅。",
-    "time": "約 22 分鐘",
     "level": "簡單",
     "yield": "約 14 個（每盅 90–95 g）",
     "ingredients": [

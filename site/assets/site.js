@@ -28,7 +28,7 @@ function isPendingText(text) {
 }
 
 function recipeHasPendingItems(recipe) {
-  if (isPendingText(recipe.time) || isPendingText(recipe.yield)) return true;
+  if (isPendingText(recipe.yield)) return true;
   return (recipe.ingredients || []).some((ing) => isPendingText(ing.amount) || isPendingText(ing.name));
 }
 
@@ -224,10 +224,6 @@ function recipeCard(recipe, index) {
       </div>
       <div class="card-body">
         <div class="card-meta">
-          <span class="meta-badge ${isPendingText(recipe.time) ? "meta-pending" : ""}">
-            ${PULSO_ICONS.timer}
-            ${escapeHTML(recipe.time)}
-          </span>
           <span class="meta-badge">
             ${PULSO_ICONS.flame}
             ${escapeHTML(recipe.level)}
@@ -318,7 +314,6 @@ function renderDialogContent(recipe, scale = 1) {
         <div class="dialog-badges">
           <span>${PULSO_ICONS.scale} 份量：${escapeHTML(scaleAmountText(recipe.yield, scale))}</span>
           <span>${PULSO_ICONS.flame} 難度：${escapeHTML(recipe.level)}</span>
-          <span class="${isPendingText(recipe.time) ? "is-pending-badge" : ""}">${PULSO_ICONS.timer} 時間：${escapeHTML(recipe.time)}</span>
         </div>
         <div class="serving-scaler" role="group" aria-label="調整配方份量">
           <span class="scaler-label">份量換算</span>
@@ -400,7 +395,7 @@ function showRecipe(slug) {
 async function loadRecipes() {
   if (!grid) return;
   try {
-    const response = await fetch("content/recipes.json?v=20261112-icefix", { cache: "no-store" });
+    const response = await fetch("content/recipes.json?v=20261112-no-time", { cache: "no-store" });
     if (!response.ok) throw new Error("配方資料讀取失敗");
     recipes = await response.json();
     updateCategoryCounts();
