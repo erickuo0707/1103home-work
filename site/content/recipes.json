@@ -152,7 +152,7 @@
   {
     "slug": "iced-americano",
     "title": "清爽冰美式",
-    "category": "飲品",
+    "category": "冰咖啡",
     "accent": "cream",
     "summary": "吧台配方：濃縮咖啡 35 g、水 160 g、冰塊 80 g。",
     "time": "未記錄",
@@ -206,7 +206,7 @@
   {
     "slug": "iced-latte",
     "title": "冰拿鐵",
-    "category": "飲品",
+    "category": "奶咖",
     "accent": "sage",
     "summary": "濃縮咖啡搭配冰牛奶的吧台配方。",
     "time": "未記錄",
@@ -235,7 +235,7 @@
   {
     "slug": "hot-latte",
     "title": "熱拿鐵",
-    "category": "飲品",
+    "category": "奶咖",
     "accent": "sage",
     "summary": "濃縮咖啡加入蒸煮牛奶，奶量依奶缸刻度操作。",
     "time": "未記錄",
@@ -260,7 +260,7 @@
   {
     "slug": "hot-cappuccino",
     "title": "熱卡布奇諾",
-    "category": "飲品",
+    "category": "奶咖",
     "accent": "sage",
     "summary": "以濃縮咖啡與奶泡製作的熱飲。",
     "time": "未記錄",
@@ -285,7 +285,7 @@
   {
     "slug": "iced-vanilla-latte",
     "title": "冰香草拿鐵",
-    "category": "飲品",
+    "category": "奶咖",
     "accent": "cream",
     "summary": "香草糖漿、鮮奶與濃縮咖啡的冰飲。",
     "time": "未記錄",
@@ -318,7 +318,7 @@
   {
     "slug": "hot-vanilla-latte",
     "title": "熱香草拿鐵",
-    "category": "飲品",
+    "category": "奶咖",
     "accent": "cream",
     "summary": "香草糖漿與熱拿鐵的組合。",
     "time": "未記錄",
@@ -347,7 +347,7 @@
   {
     "slug": "iced-brown-sugar-latte",
     "title": "冰黑糖拿鐵",
-    "category": "飲品",
+    "category": "奶咖",
     "accent": "rose",
     "summary": "黑糖醬、鮮奶與濃縮咖啡的冰飲。",
     "time": "未記錄",
@@ -380,7 +380,7 @@
   {
     "slug": "hot-brown-sugar-latte",
     "title": "熱黑糖拿鐵",
-    "category": "飲品",
+    "category": "奶咖",
     "accent": "rose",
     "summary": "黑糖醬與熱拿鐵的組合。",
     "time": "未記錄",
@@ -409,7 +409,7 @@
   {
     "slug": "lemon-americano",
     "title": "檸檬美式",
-    "category": "飲品",
+    "category": "冰咖啡",
     "accent": "rose",
     "summary": "濃縮咖啡、檸檬汁與糖調成的冰飲。",
     "time": "未記錄",
@@ -446,7 +446,7 @@
   {
     "slug": "apple-americano",
     "title": "蘋果美式",
-    "category": "飲品",
+    "category": "冰咖啡",
     "accent": "rose",
     "summary": "以蘋果汁、檸檬汁與濃縮咖啡調製的冰飲。",
     "time": "未記錄",
