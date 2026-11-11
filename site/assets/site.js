@@ -70,17 +70,6 @@ function recipeIllustration(recipe) {
       </svg>`;
   }
 
-  if (slug === "chocolate-financier") {
-    return `
-      <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
-        <ellipse cx="44" cy="68" rx="31" ry="6" fill="#eadfcd" stroke="#3b2316" stroke-width="1.8"/>
-        <path d="m20 49 10-15h28l10 15-6 13H26l-6-13Z" fill="#5a331d" stroke="#3b2316" stroke-width="2.2" stroke-linejoin="round"/>
-        <path d="m28 36 4-5h24l4 5H28Z" fill="#7a4424" stroke="#3b2316" stroke-width="2" stroke-linejoin="round"/>
-        <path d="M33 34h22" stroke="#e2b079" stroke-width="2.2" stroke-linecap="round"/>
-        <path d="M27 50h34" stroke="#8c5432" stroke-width="1.8" stroke-linecap="round"/>
-      </svg>`;
-  }
-
   switch (category) {
     case "手沖":
       return `
