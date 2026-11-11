@@ -55,6 +55,7 @@ function categoryPulsoIcon(category) {
   switch (category) {
     case "手沖":
       return PULSO_ICONS.droplets;
+    case "飲品":
     case "特調":
       return PULSO_ICONS.cupSoda;
     case "甜點":
@@ -118,6 +119,7 @@ function recipeIllustration(recipe) {
           <path d="M31 60c8 3 18 3 26 0" stroke="#c89464" stroke-width="2.2" stroke-linecap="round"/>
           <path d="M38 15c-2-4 2-5 0-9m12 9c-2-4 2-5 0-9" stroke="#e09b5b" stroke-width="2" stroke-linecap="round"/>
         </svg>`;
+    case "飲品":
     case "特調":
       return `
         <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">

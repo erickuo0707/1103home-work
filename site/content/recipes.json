@@ -152,32 +152,31 @@
   {
     "slug": "iced-americano",
     "title": "清爽冰美式",
-    "category": "冰咖啡",
+    "category": "飲品",
     "accent": "cream",
-    "summary": "咖啡和冷水先取得平衡，再用冰塊維持清爽口感。",
-    "time": "3 分鐘",
+    "summary": "吧台配方：濃縮咖啡 35 g、水 160 g、冰塊 80 g。",
+    "time": "未記錄",
     "level": "簡單",
     "yield": "1 杯",
     "ingredients": [
       {
-        "amount": "1 份",
+        "amount": "35 g",
         "name": "濃縮咖啡"
       },
       {
-        "amount": "120–150 ml",
-        "name": "冷水"
+        "amount": "160 g",
+        "name": "水"
       },
       {
-        "amount": "適量",
+        "amount": "80 g",
         "name": "冰塊"
       }
     ],
     "steps": [
-      "杯中裝入冰塊，加入冷水。",
-      "萃取濃縮咖啡，倒入杯中。",
-      "先試喝，再依豆子的烘焙與濃淡調整水量。"
+      "在杯中加入冰塊與水。",
+      "萃取 35 g 濃縮咖啡，倒入杯中後出杯。"
     ],
-    "note": "水量可依濃縮份量與豆子風味調整；若尾韻苦澀，也可先確認萃取狀況。"
+    "note": "依你提供的飲料表整理；照片未記錄製作時間。"
   },
   {
     "slug": "basque-cheesecake",
@@ -256,5 +255,628 @@
       "以 140°C 烘烤約 22 分鐘，水氣設定 80%。"
     ],
     "note": "此份量約可製作 14 個烤布蕾（白色容器約 95 g、咖啡色容器約 90 g）；烘烤設定依目前店內筆記整理。"
+  },
+  {
+    "slug": "hot-americano",
+    "title": "熱美式",
+    "category": "飲品",
+    "accent": "cream",
+    "summary": "濃縮咖啡加入熱水，依表格加至杯量八分滿。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "35 g",
+        "name": "濃縮咖啡"
+      },
+      {
+        "amount": "約八分滿",
+        "name": "熱水"
+      }
+    ],
+    "steps": [
+      "萃取濃縮咖啡。",
+      "加入熱水至杯量約八分滿。"
+    ],
+    "note": "水量依杯型八分滿；照片未記錄杯型毫升數與製作時間。"
+  },
+  {
+    "slug": "iced-latte",
+    "title": "冰拿鐵",
+    "category": "飲品",
+    "accent": "sage",
+    "summary": "濃縮咖啡搭配冰牛奶的吧台配方。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "35 g",
+        "name": "濃縮咖啡"
+      },
+      {
+        "amount": "約 160 g（原表 180 g 有手寫修正，待確認）",
+        "name": "鮮奶"
+      },
+      {
+        "amount": "適量",
+        "name": "冰塊"
+      }
+    ],
+    "steps": [
+      "杯中加入冰塊與鮮奶。",
+      "萃取濃縮咖啡後倒入杯中。"
+    ],
+    "note": "照片上牛奶量可辨識到 180 g，旁有 160 g 手寫修改，請以店內現行版本核對。"
+  },
+  {
+    "slug": "hot-latte",
+    "title": "熱拿鐵",
+    "category": "飲品",
+    "accent": "sage",
+    "summary": "濃縮咖啡加入蒸煮牛奶，奶量依奶缸刻度操作。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "35 g",
+        "name": "濃縮咖啡"
+      },
+      {
+        "amount": "奶缸線下",
+        "name": "鮮奶"
+      }
+    ],
+    "steps": [
+      "萃取濃縮咖啡。",
+      "將鮮奶加熱並打出細緻奶泡，再倒入咖啡中。"
+    ],
+    "note": "表格寫「奶缸線下」；奶缸實際刻度依店內設備。"
+  },
+  {
+    "slug": "hot-cappuccino",
+    "title": "熱卡布奇諾",
+    "category": "飲品",
+    "accent": "sage",
+    "summary": "以濃縮咖啡與奶泡製作的熱飲。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "35 g",
+        "name": "濃縮咖啡"
+      },
+      {
+        "amount": "奶缸線下（奶泡比例未記錄）",
+        "name": "鮮奶與奶泡"
+      }
+    ],
+    "steps": [
+      "萃取濃縮咖啡。",
+      "蒸煮鮮奶並打出奶泡，與咖啡組合。"
+    ],
+    "note": "照片未清楚標出奶泡用量，請依店內卡布奇諾做法核對。"
+  },
+  {
+    "slug": "iced-vanilla-latte",
+    "title": "冰香草拿鐵",
+    "category": "飲品",
+    "accent": "cream",
+    "summary": "香草糖漿、鮮奶與濃縮咖啡的冰飲。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "35 g",
+        "name": "濃縮咖啡"
+      },
+      {
+        "amount": "約 160 g（原表 180 g 有手寫修正，待確認）",
+        "name": "鮮奶"
+      },
+      {
+        "amount": "9 g（表格辨讀，待核對）",
+        "name": "香草糖漿"
+      },
+      {
+        "amount": "適量",
+        "name": "冰塊"
+      }
+    ],
+    "steps": [
+      "在杯中加入香草糖漿與鮮奶。",
+      "加入冰塊，再倒入濃縮咖啡。"
+    ],
+    "note": "香草糖漿辨讀為 9 g；牛奶欄有手寫修正，請核對店內版本。"
+  },
+  {
+    "slug": "hot-vanilla-latte",
+    "title": "熱香草拿鐵",
+    "category": "飲品",
+    "accent": "cream",
+    "summary": "香草糖漿與熱拿鐵的組合。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "35 g",
+        "name": "濃縮咖啡"
+      },
+      {
+        "amount": "奶缸線下",
+        "name": "鮮奶"
+      },
+      {
+        "amount": "約 15 g（手寫數字待核對）",
+        "name": "香草糖漿"
+      }
+    ],
+    "steps": [
+      "將香草糖漿加入濃縮咖啡中。",
+      "蒸煮鮮奶後倒入咖啡。"
+    ],
+    "note": "香草糖漿手寫數字辨讀為約 15 g，請核對後使用。"
+  },
+  {
+    "slug": "iced-brown-sugar-latte",
+    "title": "冰黑糖拿鐵",
+    "category": "飲品",
+    "accent": "rose",
+    "summary": "黑糖醬、鮮奶與濃縮咖啡的冰飲。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "35 g",
+        "name": "濃縮咖啡"
+      },
+      {
+        "amount": "約 160 g（原表 180 g 有手寫修正，待確認）",
+        "name": "鮮奶"
+      },
+      {
+        "amount": "13 g",
+        "name": "黑糖醬"
+      },
+      {
+        "amount": "適量",
+        "name": "冰塊"
+      }
+    ],
+    "steps": [
+      "在杯中加入黑糖醬與鮮奶。",
+      "加入冰塊，再倒入濃縮咖啡。"
+    ],
+    "note": "黑糖醬 13 g 依表格辨讀；牛奶欄有手寫修正，請核對。"
+  },
+  {
+    "slug": "hot-brown-sugar-latte",
+    "title": "熱黑糖拿鐵",
+    "category": "飲品",
+    "accent": "rose",
+    "summary": "黑糖醬與熱拿鐵的組合。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "35 g",
+        "name": "濃縮咖啡"
+      },
+      {
+        "amount": "奶缸線下",
+        "name": "鮮奶"
+      },
+      {
+        "amount": "6 g",
+        "name": "黑糖醬"
+      }
+    ],
+    "steps": [
+      "將黑糖醬加入濃縮咖啡中。",
+      "蒸煮鮮奶後倒入咖啡。"
+    ],
+    "note": "黑糖醬 6 g 依表格辨讀；鮮奶量依奶缸刻度。"
+  },
+  {
+    "slug": "lemon-americano",
+    "title": "檸檬美式",
+    "category": "飲品",
+    "accent": "rose",
+    "summary": "濃縮咖啡、檸檬汁與糖調成的冰飲。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "35 g",
+        "name": "濃縮咖啡"
+      },
+      {
+        "amount": "110 g",
+        "name": "水"
+      },
+      {
+        "amount": "100 g",
+        "name": "冰塊"
+      },
+      {
+        "amount": "18 g",
+        "name": "糖"
+      },
+      {
+        "amount": "22 g",
+        "name": "檸檬汁"
+      }
+    ],
+    "steps": [
+      "將水、糖與檸檬汁混合。",
+      "加入冰塊，倒入濃縮咖啡。"
+    ],
+    "note": "依你提供的店內飲料表整理；原表未記錄製作時間與完整步驟，製作流程依吧台出杯習慣。"
+  },
+  {
+    "slug": "apple-americano",
+    "title": "蘋果美式",
+    "category": "飲品",
+    "accent": "rose",
+    "summary": "以蘋果汁、檸檬汁與濃縮咖啡調製的冰飲。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "35 g",
+        "name": "濃縮咖啡"
+      },
+      {
+        "amount": "40 g",
+        "name": "水"
+      },
+      {
+        "amount": "145 g",
+        "name": "蘋果汁"
+      },
+      {
+        "amount": "8 g",
+        "name": "糖"
+      },
+      {
+        "amount": "4 g",
+        "name": "檸檬汁"
+      },
+      {
+        "amount": "適量（表格數字待確認）",
+        "name": "冰塊"
+      }
+    ],
+    "steps": [
+      "混合蘋果汁、水、糖與檸檬汁。",
+      "加入冰塊與濃縮咖啡。"
+    ],
+    "note": "表格可辨識蘋果汁 145 g、糖 8 g、檸檬汁 4 g；冰量未能確認。"
+  },
+  {
+    "slug": "iced-black-tea",
+    "title": "冰紅茶",
+    "category": "飲品",
+    "accent": "cream",
+    "summary": "紅茶底加入糖製成的冰飲。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "140 g",
+        "name": "紅茶"
+      },
+      {
+        "amount": "10 g",
+        "name": "糖"
+      },
+      {
+        "amount": "適量",
+        "name": "冰塊"
+      }
+    ],
+    "steps": [
+      "將糖加入紅茶中攪拌至溶解。",
+      "加入冰塊後出杯。"
+    ],
+    "note": "依你提供的店內飲料表整理；原表未記錄製作時間與完整步驟，製作流程依吧台出杯習慣。"
+  },
+  {
+    "slug": "hot-black-tea",
+    "title": "熱紅茶",
+    "category": "飲品",
+    "accent": "cream",
+    "summary": "以熱紅茶底與糖調製。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "130 g",
+        "name": "紅茶"
+      },
+      {
+        "amount": "10 g",
+        "name": "糖"
+      }
+    ],
+    "steps": [
+      "將糖加入熱紅茶中攪拌均勻。"
+    ],
+    "note": "表格記錄紅茶 130 g、糖 10 g；熱飲茶底溫度未記錄。"
+  },
+  {
+    "slug": "iced-milk-tea",
+    "title": "冰奶茶",
+    "category": "飲品",
+    "accent": "sage",
+    "summary": "紅茶加入糖與牛奶的冰飲。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "125 g",
+        "name": "紅茶"
+      },
+      {
+        "amount": "10 g",
+        "name": "糖"
+      },
+      {
+        "amount": "30 g",
+        "name": "牛奶"
+      },
+      {
+        "amount": "適量",
+        "name": "冰塊"
+      }
+    ],
+    "steps": [
+      "將糖加入紅茶攪拌至溶解。",
+      "加入牛奶與冰塊後出杯。"
+    ],
+    "note": "依你提供的店內飲料表整理；原表未記錄製作時間與完整步驟，製作流程依吧台出杯習慣。"
+  },
+  {
+    "slug": "hot-milk-tea",
+    "title": "熱奶茶",
+    "category": "飲品",
+    "accent": "sage",
+    "summary": "熱紅茶加入糖與奶缸牛奶。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "150 g",
+        "name": "紅茶"
+      },
+      {
+        "amount": "10 g",
+        "name": "糖"
+      },
+      {
+        "amount": "奶缸線下",
+        "name": "牛奶"
+      }
+    ],
+    "steps": [
+      "將糖加入紅茶中攪拌。",
+      "依奶缸刻度加入加熱後的牛奶。"
+    ],
+    "note": "表格記錄奶量為「奶缸線下」；實際刻度依店內設備。"
+  },
+  {
+    "slug": "iced-green-tea",
+    "title": "冰綠茶",
+    "category": "飲品",
+    "accent": "cream",
+    "summary": "依店內茶底與糖量調製的冰綠茶。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "約 110–150 g（手寫修正待確認）",
+        "name": "綠茶"
+      },
+      {
+        "amount": "約 12–15 g（手寫修正待確認）",
+        "name": "糖"
+      },
+      {
+        "amount": "適量",
+        "name": "冰塊"
+      }
+    ],
+    "steps": [
+      "將糖加入綠茶中攪拌。",
+      "加入冰塊後出杯。"
+    ],
+    "note": "茶量與糖量在照片上有手寫修改，先核對後再作為正式操作比例。"
+  },
+  {
+    "slug": "hot-green-tea",
+    "title": "熱綠茶",
+    "category": "飲品",
+    "accent": "cream",
+    "summary": "以熱綠茶底與糖調製。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "150 g",
+        "name": "綠茶"
+      },
+      {
+        "amount": "15 g（手寫數字待核對）",
+        "name": "糖"
+      }
+    ],
+    "steps": [
+      "將糖加入熱綠茶中攪拌均勻。"
+    ],
+    "note": "糖量辨讀為約 15 g；熱飲茶底溫度未記錄，請核對。"
+  },
+  {
+    "slug": "apple-iced-tea",
+    "title": "蘋果冰茶",
+    "category": "飲品",
+    "accent": "rose",
+    "summary": "紅茶、蘋果汁、檸檬與蜂蜜的果香冰茶。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "約 110–150 g（手寫修正待確認）",
+        "name": "紅茶"
+      },
+      {
+        "amount": "80 g",
+        "name": "蘋果汁"
+      },
+      {
+        "amount": "2 g",
+        "name": "檸檬汁"
+      },
+      {
+        "amount": "20 g",
+        "name": "蜂蜜"
+      },
+      {
+        "amount": "1 片（待確認）",
+        "name": "檸檬片"
+      }
+    ],
+    "steps": [
+      "將紅茶、蘋果汁、檸檬汁與蜂蜜混合。",
+      "加入冰塊與檸檬片後出杯。"
+    ],
+    "note": "蘋果汁 80 g、檸檬汁 2 g、蜂蜜 20 g 依表格辨讀；茶量手寫修正及檸檬片數量待確認。"
+  },
+  {
+    "slug": "iced-kumquat-tea",
+    "title": "冰金桔茶",
+    "category": "飲品",
+    "accent": "rose",
+    "summary": "冰茶搭配金桔調製的清爽果茶。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "待確認",
+        "name": "茶底"
+      },
+      {
+        "amount": "待確認",
+        "name": "金桔汁或金桔醬"
+      },
+      {
+        "amount": "適量",
+        "name": "冰塊"
+      }
+    ],
+    "steps": [
+      "依店內比例混合茶底與金桔。",
+      "加入冰塊後試味出杯。"
+    ],
+    "note": "原表上的金桔配方數字不清楚，材料型態與比例需回店確認。"
+  },
+  {
+    "slug": "hot-citrus-tea",
+    "title": "熱鮮桔茶",
+    "category": "飲品",
+    "accent": "rose",
+    "summary": "以熱茶底搭配鮮桔調製。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "150 g",
+        "name": "茶底"
+      },
+      {
+        "amount": "5 g",
+        "name": "糖"
+      },
+      {
+        "amount": "約 7 g（照片辨讀待核對）",
+        "name": "鮮桔或檸檬汁"
+      }
+    ],
+    "steps": [
+      "將糖加入熱茶底中攪拌。",
+      "加入柑橘汁，試味後出杯。"
+    ],
+    "note": "柑橘用量與品項在照片上不夠清楚，約 7 g 僅為辨讀結果，請核對。"
+  },
+  {
+    "slug": "lemon-black-tea",
+    "title": "檸檬紅茶",
+    "category": "飲品",
+    "accent": "rose",
+    "summary": "紅茶、糖與檸檬汁的簡單組合。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "120 g",
+        "name": "紅茶"
+      },
+      {
+        "amount": "20 g",
+        "name": "糖"
+      },
+      {
+        "amount": "10 g",
+        "name": "檸檬汁"
+      }
+    ],
+    "steps": [
+      "將糖加入紅茶中攪拌至溶解。",
+      "加入檸檬汁，依店內出杯方式提供冷飲或熱飲。"
+    ],
+    "note": "依照片下方手寫備註整理：紅茶 120 g、糖 20 g、檸檬汁 10 g；飲用溫度未註明。"
+  },
+  {
+    "slug": "lemon-cola",
+    "title": "檸檬可樂",
+    "category": "飲品",
+    "accent": "rose",
+    "summary": "可樂搭配檸檬片的簡單飲品。",
+    "time": "未記錄",
+    "level": "簡單",
+    "yield": "1 杯",
+    "ingredients": [
+      {
+        "amount": "1 杯份（用量未記錄）",
+        "name": "可樂"
+      },
+      {
+        "amount": "待確認",
+        "name": "檸檬片"
+      }
+    ],
+    "steps": [
+      "將可樂倒入杯中。",
+      "依店內配方加入檸檬片。"
+    ],
+    "note": "照片中的材料用量不清楚，請確認可樂杯量與檸檬片數量。"
   }
 ]
