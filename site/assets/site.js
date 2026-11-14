@@ -27,10 +27,6 @@ function isPendingText(text) {
   return /(待確認|待補|未記錄)/.test(String(text));
 }
 
-function recipeHasPendingItems(recipe) {
-  if (isPendingText(recipe.yield)) return true;
-  return (recipe.ingredients || []).some((ing) => isPendingText(ing.amount) || isPendingText(ing.name));
-}
 
 /* PulsoIcon 24x24 Animated Icons (https://github.com/CityPulso/PulsoIcon) */
 const PULSO_ICONS = {
@@ -202,7 +198,6 @@ function updateCategoryCounts() {
 function recipeCard(recipe, index) {
   const accent = ["rose", "sage", "cream"].includes(recipe.accent) ? recipe.accent : "cream";
   const menuNo = `NO.${String(index + 1).padStart(2, "0")}`;
-  const hasPending = recipeHasPendingItems(recipe);
   const totalIngredients = (recipe.ingredients || []).length;
   const previewIngredients = (recipe.ingredients || [])
     .slice(0, 3)
@@ -228,7 +223,6 @@ function recipeCard(recipe, index) {
             ${PULSO_ICONS.flame}
             ${escapeHTML(recipe.level)}
           </span>
-          ${hasPending ? `<span class="card-status-tag" title="部分比例或烤溫待實測確認">試作待補</span>` : ""}
         </div>
         <h3>${escapeHTML(recipe.title)}</h3>
         <p>${escapeHTML(recipe.summary)}</p>
@@ -293,7 +287,6 @@ function renderDialogContent(recipe, scale = 1) {
   const currentIndex = recipes.findIndex((item) => item.slug === recipe.slug);
   const prevRecipe = recipes[(currentIndex - 1 + recipes.length) % recipes.length];
   const nextRecipe = recipes[(currentIndex + 1) % recipes.length];
-  const hasPending = recipeHasPendingItems(recipe);
 
   dialogContent.innerHTML = `
     <div class="dialog-header-band accent-${accent}">
@@ -302,11 +295,6 @@ function renderDialogContent(recipe, scale = 1) {
           ${categoryPulsoIcon(recipe.category)}
           ${escapeHTML(recipe.category)}
         </span>
-        ${
-          hasPending
-            ? `<span class="dialog-pending-pill">${PULSO_ICONS.sparkles} 試作紀錄（部分參數待補）</span>`
-            : `<span class="dialog-ready-pill">${PULSO_ICONS.check} 起始配方已建立</span>`
-        }
       </div>
       <h2 id="dialog-title">${escapeHTML(recipe.title)}</h2>
       <p class="dialog-summary">${escapeHTML(recipe.summary)}</p>
@@ -355,10 +343,10 @@ function renderDialogContent(recipe, scale = 1) {
           ${recipe.steps.map((step) => `<li>${escapeHTML(step)}</li>`).join("")}
         </ol>
       </section>
-      <div class="recipe-note ${hasPending ? "is-pending-note" : ""}">
+      <div class="recipe-note">
         <span aria-hidden="true">${PULSO_ICONS.sparkles}</span>
         <div>
-          <strong>${hasPending ? "試作待確認提醒" : "吧台調整筆記"}</strong>
+          <strong>吧台調整筆記</strong>
           <p>${escapeHTML(recipe.note)}</p>
         </div>
       </div>
