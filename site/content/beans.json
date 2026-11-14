@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ethiopia-yirgacheffe",
+    "name": "衣索比亞｜耶加雪菲",
+    "origin": "衣索比亞・耶加雪菲",
+    "roast": "淺焙示範",
+    "profile": "花香、柑橘、茶感",
+    "suggestedRatio": 16.5,
+    "advice": "先用 1:16.5 試沖；如果酸感太尖，可降到 1:16 再比較。"
+  },
+  {
+    "id": "colombia-huila",
+    "name": "哥倫比亞｜薇拉",
+    "origin": "哥倫比亞・薇拉",
+    "roast": "淺中焙示範",
+    "profile": "焦糖甜感、紅果、平衡酸質",
+    "suggestedRatio": 16,
+    "advice": "從 1:16 開始；若喝起來偏淡，可試 1:15.5。"
+  },
+  {
+    "id": "kenya-aa",
+    "name": "肯亞｜AA",
+    "origin": "肯亞",
+    "roast": "淺焙示範",
+    "profile": "莓果、柑橘、明亮酸質",
+    "suggestedRatio": 16.5,
+    "advice": "從 1:16.5 開始保留明亮感；若太尖銳，可降到 1:16。"
+  },
+  {
+    "id": "brazil-cerrado",
+    "name": "巴西｜喜拉朵",
+    "origin": "巴西・喜拉朵",
+    "roast": "中焙示範",
+    "profile": "堅果、可可、較厚實",
+    "suggestedRatio": 15.5,
+    "advice": "從 1:15.5 開始；若口感太重，可提高至 1:16。"
+  },
+  {
+    "id": "guatemala-antigua",
+    "name": "瓜地馬拉｜安提瓜",
+    "origin": "瓜地馬拉・安提瓜",
+    "roast": "淺中焙示範",
+    "profile": "巧克力、柑橘、香料感",
+    "suggestedRatio": 16,
+    "advice": "從 1:16 開始，再依甜感與厚度微調。"
+  },
+  {
+    "id": "costa-rica-tarrazu",
+    "name": "哥斯大黎加｜塔拉珠",
+    "origin": "哥斯大黎加・塔拉珠",
+    "roast": "淺焙示範",
+    "profile": "蜂蜜甜感、柑橘、乾淨口感",
+    "suggestedRatio": 16.5,
+    "advice": "從 1:16.5 開始；如果尾韻太薄，可降到 1:16。"
+  },
+  {
+    "id": "indonesia-mandheling",
+    "name": "印尼｜曼特寧",
+    "origin": "印尼・蘇門答臘",
+    "roast": "中焙示範",
+    "profile": "厚實、香料、草本調性",
+    "suggestedRatio": 15,
+    "advice": "從 1:15 開始；若口感太濃重，可提高至 1:15.5。"
+  },
+  {
+    "id": "panama-geisha",
+    "name": "巴拿馬｜藝伎",
+    "origin": "巴拿馬",
+    "roast": "淺焙示範",
+    "profile": "花香、柑橘、細緻茶感",
+    "suggestedRatio": 17,
+    "advice": "從 1:17 開始呈現清晰香氣；若偏淡，可降到 1:16.5。"
+  }
+]

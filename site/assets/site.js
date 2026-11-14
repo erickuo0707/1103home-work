@@ -523,4 +523,44 @@ if (calcCoffee && calcRatio) {
   updateBrewCalc();
 }
 
+
+async function loadBeanPresets() {
+  const selector = document.querySelector("#bean-select");
+  const profile = document.querySelector("#bean-profile");
+  if (!selector || !calcRatio) return;
+
+  try {
+    const response = await fetch("content/beans.json?v=20261114-bean-picker", { cache: "no-store" });
+    if (!response.ok) throw new Error("豆款資料讀取失敗");
+    const beans = await response.json();
+
+    beans.forEach((bean) => {
+      const option = document.createElement("option");
+      option.value = bean.id;
+      option.textContent = bean.name;
+      selector.appendChild(option);
+    });
+
+    selector.addEventListener("change", () => {
+      const bean = beans.find((item) => item.id === selector.value);
+      if (!bean) {
+        profile.textContent = "選擇豆款後，會帶入建議粉水比並更新目標水量。";
+        return;
+      }
+
+      calcRatio.value = String(bean.suggestedRatio);
+      calcRatio.dispatchEvent(new Event("input", { bubbles: true }));
+      profile.innerHTML = `<p><strong>建議起始粉水比：1 : ${escapeHTML(bean.suggestedRatio)}</strong></p>
+        <p>${escapeHTML(bean.origin)}・${escapeHTML(bean.roast)}</p>
+        <p>常見風味：${escapeHTML(bean.profile)}</p>
+        <p>${escapeHTML(bean.advice)}</p>`;
+    });
+  } catch (error) {
+    selector.disabled = true;
+    profile.textContent = "豆款建議暫時無法載入，仍可使用下方粉水比滑桿自行試算。";
+    console.error(error);
+  }
+}
+
 loadRecipes();
+loadBeanPresets();

@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#140d09">
   <meta name="description" content="從粉水比、悶蒸到分段注水，建立一份可以反覆調整的手沖咖啡筆記。">
   <title>手沖入門筆記｜萃光咖啡筆記</title>
-  <link rel="stylesheet" href="assets/site.css">
-  <script src="assets/site.js" defer></script>
+  <link rel="stylesheet" href="assets/site.css?v=20261114-bean-picker">
+  <script src="assets/site.js?v=20261114-bean-picker" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳到主要內容</a>
@@ -136,6 +136,15 @@
           <p class="eyebrow">RATIO HELPER</p>
           <h3 id="calc-title">起始粉水比試算</h3>
           <div class="ratio-calc">
+            <div class="calc-row bean-select-row">
+              <label for="bean-select">選擇豆款</label>
+              <select id="bean-select">
+                <option value="">選一款常見豆型</option>
+              </select>
+            </div>
+            <div class="bean-profile" id="bean-profile" aria-live="polite">
+              選擇豆款後，會帶入建議粉水比並更新目標水量。
+            </div>
             <div class="calc-row">
               <label for="calc-coffee">咖啡粉量 <strong id="calc-coffee-val">15 g</strong></label>
               <input id="calc-coffee" type="range" min="10" max="30" step="1" value="15">
@@ -161,7 +170,8 @@
                 <path class="pi-twinkle" d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/>
               </svg>
             </span>
-            <p>以上為練習用起始比例，實際水量可依烘焙度與個人濃淡偏好微調。</p>
+            <p>八款豆型是常見產區示例，實際風味仍依品種、處理法與烘焙度而變。選單比例是試沖起點，不代表該產區的固定最佳值；請以豆袋資料和試喝結果微調。</p>
+            <p>參考：<a href="https://onyxcoffeelab.com/pages/help-me-brew" target="_blank" rel="noopener noreferrer">Onyx Coffee Lab 的手沖示範</a>採用 1:16。</p>
           </div>
         </div>
 

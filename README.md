@@ -11,7 +11,7 @@
 ## 網站頁面
 
 - `site/index.html`：配方索引、搜尋、分類篩選與配方明細。
-- `site/brew-guide.html`：手沖入門與記錄方法。
+- `site/brew-guide.html`：手沖入門、豆款選擇與粉水比試算。
 - `templates/page-template.html`：建立新主題頁的起始模板，不會發布到網站。
 
 ## 本機預覽
@@ -30,6 +30,10 @@ python -m http.server 8000 --directory site
 2. 在 `site/content/recipes.json` 新增一筆完整資料；飲品和甜點沿用同一組欄位；若新增分類，需同步更新首頁篩選按鈕、`site/assets/site.js` 的插圖規則與 `AGENTS.md`。
 3. 確認 `slug` 唯一、JSON 格式正確；原筆記未記錄的份量、單位或烘烤條件請標示待確認，不要自行補猜。
 4. 確認首頁完整清單將飲品集中在前、甜點集中在後；依 `AGENTS.md` 套用冰量規則，並確認搜尋、分類、份量換算與明細視窗能呈現新配方。
+
+## 手沖豆款建議
+
+`site/content/beans.json` 維護八款常見產區示例、風味概述與建議起始粉水比。這些數值供試沖起步使用，並非所有同產區咖啡的固定最佳比例；選豆後會帶入手沖頁的粉水比試算器，仍可自行調整。
 
 ## 新增主題頁
 

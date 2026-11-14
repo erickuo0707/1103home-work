@@ -2410,6 +2410,41 @@ button {
   gap: 16px;
 }
 
+.bean-select-row select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+}
+
+.bean-select-row select:focus-visible {
+  outline: none;
+  box-shadow: var(--ring-focus);
+}
+
+.bean-profile {
+  padding: 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.bean-profile p {
+  margin: 4px 0 0;
+}
+
+.bean-profile strong {
+  color: var(--crema);
+  font-size: 15px;
+}
+
 .calc-row {
   display: flex;
   flex-direction: column;
