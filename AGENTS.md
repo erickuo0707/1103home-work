@@ -16,14 +16,15 @@
 ## 專案結構
 
 ```text
-coffee-notes/
+1103home-work/
 ├── AGENTS.md                     # AI 協作規則，所有修改的第一份參考
 ├── README.md                     # 專案介紹、本機預覽與發布方式
 ├── templates/
 │   └── page-template.html         # 新增主題頁時複製使用
 ├── site/                         # GitHub Pages 發布根目錄
 │   ├── index.html                 # 首頁與可搜尋、篩選的配方索引
-│   ├── brew-guide.html            # 手沖入門內容頁
+│   ├── brew-guide.html            # 手沖入門內容頁（早期頁面，例外保留在根目錄）
+│   ├── pages/                     # 新主題頁放這裡（尚未建立，新增第一頁時建立）
 │   ├── assets/
 │   │   ├── site.css               # 全站色彩、排版、卡片與響應式樣式
 │   │   └── site.js                # 讀取配方資料、搜尋、分類與詳細視窗
@@ -45,7 +46,7 @@ coffee-notes/
 {
   "slug": "kebab-case-unique-id",
   "title": "繁體中文配方名稱",
-  "category": "特調或甜點",
+  "category": "飲品、冰咖啡、奶咖、手沖、特調、甜點 擇一",
   "accent": "rose",
   "summary": "一句話說明味道與配方特色。",
   "level": "簡單",
@@ -75,8 +76,8 @@ coffee-notes/
 - 手沖頁的豆款選單應更新既有粉水比試算器，保留使用者自行調整粉量與比例的能力。
 
 ### 吧台冰量與分組規則
-- 配方資料不設獨立的製作時間欄位；烘烤、浸泡等必要時間寫在製作步驟中。
 
+- 配方資料不設獨立的製作時間欄位；烘烤、浸泡等必要時間寫在製作步驟中。
 - 配方表中的冰咖啡統一使用半杯冰；冰紅茶、冰綠茶及其他冰茶統一使用整杯冰。
 - 檸檬可樂使用半杯冰。
 - 熱飲不加入冰塊。熱水份量未提供時，先詢問使用者；確認「補至杯量」後再寫入配方。
@@ -85,7 +86,7 @@ coffee-notes/
 
 ### 新增主題頁
 
-1. 複製 `templates/page-template.html`，存到 `site/pages/<slug>.html`。
+1. 複製 `templates/page-template.html`，存到 `site/pages/<slug>.html`。`site/brew-guide.html` 是早期頁面，例外保留在根目錄；新頁面一律放 `site/pages/`，不要仿照它放在根目錄。
 2. 使用小寫英文連字號命名檔案；將模板中的 `{{PAGE_TITLE}}`、`{{PAGE_SUMMARY}}`、`{{PAGE_LABEL}}` 與 `{{PAGE_CONTENT}}` 全部換成完成內容。
 3. 保留模板的語言設定、頁首、頁尾、語意化標題順序、共用 CSS 路徑與行動版版面。
 4. 在首頁或相關頁面加入連結；相對資源路徑需符合 `site/pages/` 的目錄深度。
