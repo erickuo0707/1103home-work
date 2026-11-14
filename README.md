@@ -1,5 +1,7 @@
 # 萃光咖啡筆記
 
+🌐 **網頁成果：** [點此立即瀏覽萃光咖啡筆記](https://erickuo0707.github.io/1103home-work/)
+
 一個為了在咖啡廳工作時快速查閱食譜而建立的繁體中文網站，集中整理咖啡飲品與甜點配方。配方採 JSON 資料維護，網站以原生 HTML、CSS、JavaScript 製作，不需安裝套件或建置。
 
 ## 專案簡介
@@ -38,7 +40,7 @@ python -m http.server 8000 --directory site
 GitHub Actions 會將 `site/` 發布為靜態網站。將專案推送到 GitHub 的 `main` 分支後，在儲存庫 Settings → Pages 將來源設為 GitHub Actions；之後每次推送都會自動更新網站。
 
 - GitHub Repository：https://github.com/erickuo0707/1103home-work
-- 網頁成果：預期網址為 `https://erickuo0707.github.io/1103home-work/`，以 GitHub Pages 部署結果為準
+
 
 ## AI 延伸方式
 
