@@ -27,7 +27,6 @@ function isPendingText(text) {
   return /(待確認|待補|未記錄)/.test(String(text));
 }
 
-
 /* PulsoIcon 24x24 Animated Icons (https://github.com/CityPulso/PulsoIcon) */
 const PULSO_ICONS = {
   coffee: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-float-1" d="M10 2v2"/><path class="pi-float-2" d="M14 2v2"/><path class="pi-press" d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path class="pi-float-3" d="M6 2v2"/></svg>`,
@@ -37,6 +36,7 @@ const PULSO_ICONS = {
   milk: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-sway" d="M8 2h8"/><path class="pi-sway" d="M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2"/><path d="M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/></svg>`,
   droplets: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-drop-1" d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path class="pi-drop-2" d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg>`,
   glassWater: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-sway" d="M5.116 4.104A1 1 0 0 1 6.11 3h11.78a1 1 0 0 1 .994 1.105L17.19 20.21A2 2 0 0 1 15.2 22H8.8a2 2 0 0 1-2-1.79z"/><path d="M6 12a5 5 0 0 1 6 0 5 5 0 0 0 6 0"/></svg>`,
+  iceCube: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect class="pi-wobble" x="4" y="4" width="16" height="16" rx="3.5"/><path d="M8 9h3v3"/><path d="M13 15h3v-3"/></svg>`,
   timer: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><line x1="10" x2="14" y1="2" y2="2"/><line class="pi-spin" x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/></svg>`,
   flame: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="pi-sway" d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg>`,
   scale: `<svg class="pulso-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v18"/><path class="pi-sway" d="m19 8 3 8a5 5 0 0 1-6 0zV7"/><path class="pi-sway" d="M3 7h1a17 17 0 0 0 8-2 17 17 0 0 0 8 2h1"/><path class="pi-sway" d="m5 8 3 8a5 5 0 0 1-6 0zV7"/><path d="M7 21h10"/></svg>`,
@@ -65,6 +65,38 @@ function categoryPulsoIcon(category) {
   }
 }
 
+/* 自動判讀冷熱飲與冰塊規格（提供吧台快速查閱徽章） */
+function getRecipeServingSpec(recipe) {
+  const ingredients = recipe.ingredients || [];
+  const iceItem = ingredients.find((item) => item.name.includes("冰塊"));
+  if (iceItem) {
+    return {
+      tone: "iced",
+      icon: PULSO_ICONS.iceCube,
+      label: `冰塊：${iceItem.amount}`
+    };
+  }
+  if (recipe.category === "甜點") {
+    return {
+      tone: "bake",
+      icon: PULSO_ICONS.cakeSlice,
+      label: "烤箱烘焙"
+    };
+  }
+  if (recipe.category === "手沖") {
+    return {
+      tone: "brew",
+      icon: PULSO_ICONS.droplets,
+      label: "手沖萃取"
+    };
+  }
+  return {
+    tone: "hot",
+    icon: PULSO_ICONS.coffee,
+    label: "熱飲出杯"
+  };
+}
+
 function recipeIllustration(recipe) {
   const slug = recipe.slug || "";
   const category = recipe.category || "";
@@ -80,17 +112,6 @@ function recipeIllustration(recipe) {
       </svg>`;
   }
 
-  if (slug === "matcha-basque-cheesecake") {
-    return `
-      <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
-        <ellipse cx="44" cy="69" rx="30" ry="6" fill="#dfe4d5" stroke="#3b2316" stroke-width="1.8"/>
-        <path d="m19 50 28-22 23 18-27 23-24-19Z" fill="#7c8f68" stroke="#3b2316" stroke-width="2.2" stroke-linejoin="round"/>
-        <path d="M19 50v9l24 14v-9L19 50Zm24 14 27-18v9L43 73v-9Z" fill="#5e704c" stroke="#3b2316" stroke-width="2.2" stroke-linejoin="round"/>
-        <path d="m23 48 24-18 17 13-23 18-18-13Z" fill="#6b3a1e" stroke="#3b2316" stroke-width="1.8" stroke-linejoin="round"/>
-        <path d="M35 55c5 2 10 1 15-2" stroke="#dce3d2" stroke-width="2" stroke-linecap="round"/>
-      </svg>`;
-  }
-
   if (slug === "creme-brulee") {
     return `
       <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
@@ -100,6 +121,66 @@ function recipeIllustration(recipe) {
         <ellipse cx="44" cy="42" rx="24" ry="7" fill="#f3cf85" stroke="#3b2316" stroke-width="2"/>
         <ellipse cx="44" cy="42" rx="18" ry="4.5" fill="#8f491e"/>
         <path d="M54 24 43 40" stroke="#e09b5b" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>`;
+  }
+
+  /* 檸檬可樂：氣泡可樂與檸檬片、半杯冰 */
+  if (slug === "lemon-cola") {
+    return `
+      <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
+        <path d="M26 20h36l-4 46a7 7 0 0 1-7 6H37a7 7 0 0 1-7-6l-4-46Z" fill="#fcf8f1" stroke="#3b2316" stroke-width="2.2"/>
+        <path d="M28 29h32l-3 37a5 5 0 0 1-5 4H36a5 5 0 0 1-5-4l-3-37Z" fill="#3b1d12"/>
+        <circle cx="57" cy="21" r="9" fill="#f8e16c" stroke="#c88a2b" stroke-width="2"/>
+        <circle cx="42" cy="42" r="7" fill="#f8e16c" stroke="#c88a2b" stroke-width="1.6"/>
+        <rect x="33" y="47" width="9" height="9" rx="2" transform="rotate(-10 33 47)" fill="#f7efe2" stroke="#9c5e35" stroke-width="1.5"/>
+        <circle cx="38" cy="34" r="1.8" fill="#f7ebd9"/><circle cx="49" cy="36" r="1.5" fill="#f7ebd9"/><circle cx="45" cy="58" r="1.8" fill="#f7ebd9"/>
+        <path d="M49 12 42 36" stroke="#e09b5b" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>`;
+  }
+
+  /* 檸檬美式 / 蘋果美式：濃縮分層果香冰美式 */
+  if (slug === "lemon-americano" || slug === "apple-americano") {
+    const juiceColor = slug === "apple-americano" ? "#eab664" : "#f2d479";
+    return `
+      <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
+        <path d="M26 21h36l-4 45a7 7 0 0 1-7 6H37a7 7 0 0 1-7-6l-4-45Z" fill="#fcf8f1" stroke="#3b2316" stroke-width="2.2"/>
+        <path d="M27 29h34l-1.2 14H28.2L27 29Z" fill="#5e3219"/>
+        <path d="M28.2 43h31.6l-2 23a5 5 0 0 1-5 4H35.2a5 5 0 0 1-5-4l-2-23Z" fill="${juiceColor}"/>
+        <circle cx="58" cy="21" r="8.5" fill="#f7df86" stroke="#b35a42" stroke-width="2"/>
+        <rect x="34" y="45" width="9" height="9" rx="2" transform="rotate(-8 34 45)" fill="#fcf8f1" stroke="#9c5e35" stroke-width="1.5"/>
+        <rect x="46" y="49" width="9" height="9" rx="2" transform="rotate(11 46 49)" fill="#fcf8f1" stroke="#9c5e35" stroke-width="1.5"/>
+      </svg>`;
+  }
+
+  /* 冰拿鐵 / 冰香草拿鐵 / 冰黑糖拿鐵 / 冰奶茶：漸層鮮奶與冰塊 */
+  if (slug.startsWith("iced-") && (category === "奶咖" || slug === "iced-milk-tea")) {
+    const isBrownSugar = slug.includes("brown-sugar");
+    return `
+      <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
+        <path d="M26 21h36l-4 45a7 7 0 0 1-7 6H37a7 7 0 0 1-7-6l-4-45Z" fill="#fcf8f1" stroke="#3b2316" stroke-width="2.2"/>
+        <path d="M27.2 29h33.6l-1.2 14H28.4L27.2 29Z" fill="#7a4424"/>
+        <path d="M28.4 43h31.2l-2 23a5 5 0 0 1-5 4H35.4a5 5 0 0 1-5-4l-2-23Z" fill="#f5ead8"/>
+        ${isBrownSugar ? `<path d="M30 48c5 4 8-2 13 3s8-1 14 4M31 58c6 3 11-2 17 2" stroke="#8a421a" stroke-width="2.4" stroke-linecap="round"/>` : ""}
+        <rect x="34" y="34" width="9" height="9" rx="2" transform="rotate(-8 34 34)" fill="#fcf8f1" stroke="#3b2316" stroke-width="1.5"/>
+        <rect x="46" y="36" width="9" height="9" rx="2" transform="rotate(10 46 36)" fill="#fcf8f1" stroke="#3b2316" stroke-width="1.5"/>
+      </svg>`;
+  }
+
+  /* 熱美式 / 熱紅茶 / 熱綠茶 / 熱金桔茶：溫潤馬克杯與熱氣 */
+  if (slug.startsWith("hot-") && category === "飲品" && !slug.includes("milk")) {
+    const liquidColor = slug.includes("green") || slug.includes("citrus")
+      ? "#c89f49"
+      : slug.includes("black-tea")
+        ? "#9e4722"
+        : "#4e2a16";
+    return `
+      <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
+        <path d="M22 29h36v21a16 16 0 0 1-16 16h-4a16 16 0 0 1-16-16V29Z" fill="#fcf8f1" stroke="#3b2316" stroke-width="2.2"/>
+        <path d="M58 35h6a6 6 0 0 1 0 12h-6" stroke="#fcf8f1" stroke-width="3.6" stroke-linecap="round"/>
+        <path d="M58 35h6a6 6 0 0 1 0 12h-6" stroke="#3b2316" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="40" cy="30" rx="17" ry="4" fill="${liquidColor}" stroke="#3b2316" stroke-width="1.8"/>
+        <path d="M33 21c-2-4 2-5 0-9m13 9c-2-4 2-5 0-9" stroke="#e09b5b" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M18 68h44" stroke="#e09b5b" stroke-width="2.6" stroke-linecap="round"/>
       </svg>`;
   }
 
@@ -120,8 +201,8 @@ function recipeIllustration(recipe) {
       return `
         <svg class="card-illustration" viewBox="0 0 88 88" fill="none" aria-hidden="true">
           <path d="M27 20h34l-3 46a8 8 0 0 1-8 7H38a8 8 0 0 1-8-7l-3-46Z" fill="#fcf8f1" stroke="#3b2316" stroke-width="2.2"/>
-          <path d="M28 28h32l-1 14H29l-1-14Z" fill="#6b3a1e"/>
-          <path d="M29 42h30l-2 24a6 6 0 0 1-6 5H37a6 6 0 0 1-6-5l-2-24Z" fill="#e8b89a"/>
+          <path d="M28 28h32l-1 14H29l-1-14Z" fill="#c77d36"/>
+          <path d="M29 42h30l-2 24a6 6 0 0 1-6 5H37a6 6 0 0 1-6-5l-2-24Z" fill="#e8b878"/>
           <circle cx="58" cy="20" r="9" fill="#f4d5c6" stroke="#b35a42" stroke-width="2"/>
           <rect x="35" y="45" width="8" height="8" rx="1.5" transform="rotate(-10 35 45)" fill="#fcf8f1" stroke="#9c5e35" stroke-width="1.6"/>
           <rect x="46" y="50" width="8" height="8" rx="1.5" transform="rotate(12 46 50)" fill="#fcf8f1" stroke="#9c5e35" stroke-width="1.6"/>
@@ -192,18 +273,27 @@ function updateCategoryCounts() {
       button.appendChild(badge);
     }
     badge.textContent = formatted;
+    /* 若該分類目前為 0 筆（例如特調），自動隱藏按鈕避免空分類干擾 */
+    if (cat !== "全部") {
+      button.hidden = count === 0;
+    }
   });
 }
 
 function recipeCard(recipe, index) {
   const accent = ["rose", "sage", "cream"].includes(recipe.accent) ? recipe.accent : "cream";
   const menuNo = `NO.${String(index + 1).padStart(2, "0")}`;
+  const servingSpec = getRecipeServingSpec(recipe);
   const totalIngredients = (recipe.ingredients || []).length;
   const previewIngredients = (recipe.ingredients || [])
-    .slice(0, 3)
-    .map((ing) => `<span class="card-ingredient-pill">${escapeHTML(ing.name.replace(/（.*?）/g, ""))}</span>`)
+    .slice(0, 4)
+    .map((ing) => {
+      const cleanName = ing.name.replace(/（.*?）/g, "");
+      const shortAmount = String(ing.amount).replace(/（.*?）/g, "").trim();
+      return `<span class="card-ingredient-pill"><b>${escapeHTML(cleanName)}</b><em>${escapeHTML(shortAmount)}</em></span>`;
+    })
     .join("");
-  const extraCount = totalIngredients > 3 ? `<span class="card-ingredient-pill is-more">+${totalIngredients - 3}</span>` : "";
+  const extraCount = totalIngredients > 4 ? `<span class="card-ingredient-pill is-more">+${totalIngredients - 4} 項</span>` : "";
 
   return `
     <article class="recipe-card accent-${accent}" style="--card-index:${index}" data-recipe="${escapeHTML(recipe.slug)}">
@@ -219,6 +309,10 @@ function recipeCard(recipe, index) {
       </div>
       <div class="card-body">
         <div class="card-meta">
+          <span class="meta-badge meta-tone-${servingSpec.tone}">
+            ${servingSpec.icon}
+            ${escapeHTML(servingSpec.label)}
+          </span>
           <span class="meta-badge">
             ${PULSO_ICONS.flame}
             ${escapeHTML(recipe.level)}
@@ -226,7 +320,7 @@ function recipeCard(recipe, index) {
         </div>
         <h3>${escapeHTML(recipe.title)}</h3>
         <p>${escapeHTML(recipe.summary)}</p>
-        <div class="card-ingredients-preview" aria-label="主要材料">
+        <div class="card-ingredients-preview" aria-label="主要材料與用量">
           ${previewIngredients}${extraCount}
         </div>
         <div class="card-footer-row">
@@ -235,7 +329,7 @@ function recipeCard(recipe, index) {
             ${escapeHTML(recipe.yield)}
           </span>
           <button class="card-open" type="button" data-recipe="${escapeHTML(recipe.slug)}" aria-label="查看${escapeHTML(recipe.title)}配方明細">
-            <span>配方明細</span>
+            <span>製作步驟</span>
             <span class="card-open-icon" aria-hidden="true">${PULSO_ICONS.arrowUpRight}</span>
           </button>
         </div>
@@ -248,7 +342,7 @@ function getVisibleRecipes() {
   const query = searchInput.value.trim().toLocaleLowerCase("zh-Hant");
   return recipes.filter((recipe) => {
     const matchesCategory = selectedCategory === "全部" || recipe.category === selectedCategory;
-    const ingredientNames = (recipe.ingredients || []).map((i) => i.name).join(" ");
+    const ingredientNames = (recipe.ingredients || []).map((i) => `${i.name} ${i.amount}`).join(" ");
     const haystack = [recipe.title, recipe.category, recipe.summary, recipe.note, ingredientNames]
       .join(" ")
       .toLocaleLowerCase("zh-Hant");
@@ -264,11 +358,29 @@ function renderRecipes() {
   }
 
   const visibleRecipes = getVisibleRecipes();
+  const groupCounts = visibleRecipes.reduce(
+    (acc, item) => {
+      const key = item.category === "甜點" ? "甜點" : "飲品";
+      acc[key] = (acc[key] || 0) + 1;
+      return acc;
+    },
+    {}
+  );
+
   let previousGroup = "";
   grid.innerHTML = visibleRecipes.map((recipe, index) => {
     const group = recipe.category === "甜點" ? "甜點" : "飲品";
+    const groupIcon = group === "甜點" ? PULSO_ICONS.cakeSlice : PULSO_ICONS.cupSoda;
+    const groupEn = group === "甜點" ? "PATISSERIE & SWEETS" : "BARISTA DRINKS & COFFEE";
     const heading = group !== previousGroup
-      ? `<div class="recipe-group-heading"><h3>${group}</h3><span>${group === "甜點" ? "SWEETS" : "DRINKS"}</span></div>`
+      ? `<div class="recipe-group-heading">
+          <div class="group-heading-title">
+            <span class="group-heading-icon" aria-hidden="true">${groupIcon}</span>
+            <h3>${group}</h3>
+            <span class="group-heading-en">${groupEn}</span>
+          </div>
+          <span class="group-heading-count">共 ${groupCounts[group]} 款配方</span>
+        </div>`
       : "";
     previousGroup = group;
     return heading + recipeCard(recipe, index);
@@ -287,6 +399,7 @@ function renderDialogContent(recipe, scale = 1) {
   const currentIndex = recipes.findIndex((item) => item.slug === recipe.slug);
   const prevRecipe = recipes[(currentIndex - 1 + recipes.length) % recipes.length];
   const nextRecipe = recipes[(currentIndex + 1) % recipes.length];
+  const servingSpec = getRecipeServingSpec(recipe);
 
   dialogContent.innerHTML = `
     <div class="dialog-header-band accent-${accent}">
@@ -294,6 +407,10 @@ function renderDialogContent(recipe, scale = 1) {
         <span class="dialog-cat-pill">
           ${categoryPulsoIcon(recipe.category)}
           ${escapeHTML(recipe.category)}
+        </span>
+        <span class="dialog-serving-pill tone-${servingSpec.tone}">
+          ${servingSpec.icon}
+          ${escapeHTML(servingSpec.label)}
         </span>
       </div>
       <h2 id="dialog-title">${escapeHTML(recipe.title)}</h2>
@@ -383,7 +500,7 @@ function showRecipe(slug) {
 async function loadRecipes() {
   if (!grid) return;
   try {
-    const response = await fetch("content/recipes.json?v=20261112-no-time", { cache: "no-store" });
+    const response = await fetch("content/recipes.json?v=20261115-bar-ui", { cache: "no-store" });
     if (!response.ok) throw new Error("配方資料讀取失敗");
     recipes = await response.json();
     updateCategoryCounts();
@@ -511,37 +628,64 @@ if (calcCoffee && calcRatio) {
   updateBrewCalc();
 }
 
-
 async function loadBeanPresets() {
   const selector = document.querySelector("#bean-select");
   const profile = document.querySelector("#bean-profile");
   if (!selector || !calcRatio) return;
 
   try {
-    const response = await fetch("content/beans.json?v=20261114-bean-picker", { cache: "no-store" });
+    const response = await fetch("content/beans.json?v=20261115-bean-picker", { cache: "no-store" });
     if (!response.ok) throw new Error("豆款資料讀取失敗");
     const beans = await response.json();
 
     beans.forEach((bean) => {
       const option = document.createElement("option");
       option.value = bean.id;
-      option.textContent = bean.name;
+      option.textContent = `${bean.name}（建議 1:${bean.suggestedRatio}）`;
       selector.appendChild(option);
     });
+
+    function renderBeanCard(bean) {
+      if (!bean) {
+        profile.innerHTML = `
+          <div class="bean-empty-hint">
+            ${PULSO_ICONS.bean}
+            <span>選擇上方豆款，即可帶入<strong>建議起始粉水比</strong>、烘焙度與風味筆記。</span>
+          </div>`;
+        return;
+      }
+
+      const flavorTags = String(bean.profile || "")
+        .split(/[、,，]/)
+        .map((tag) => tag.trim())
+        .filter(Boolean)
+        .map((tag) => `<span class="bean-flavor-pill">${escapeHTML(tag)}</span>`)
+        .join("");
+
+      profile.innerHTML = `
+        <div class="bean-card-head">
+          <div class="bean-meta-pills">
+            <span class="bean-origin-pill">${PULSO_ICONS.bean} ${escapeHTML(bean.origin)}</span>
+            <span class="bean-roast-pill">${escapeHTML(bean.roast)}</span>
+          </div>
+          <span class="bean-ratio-badge">建議起始 1 : ${escapeHTML(bean.suggestedRatio)}</span>
+        </div>
+        <div class="bean-flavors" aria-label="常見風味">${flavorTags}</div>
+        <p class="bean-advice">${PULSO_ICONS.sparkles} <span>${escapeHTML(bean.advice)}</span></p>`;
+    }
+
+    renderBeanCard(null);
 
     selector.addEventListener("change", () => {
       const bean = beans.find((item) => item.id === selector.value);
       if (!bean) {
-        profile.textContent = "選擇豆款後，會帶入建議粉水比並更新目標水量。";
+        renderBeanCard(null);
         return;
       }
 
       calcRatio.value = String(bean.suggestedRatio);
       calcRatio.dispatchEvent(new Event("input", { bubbles: true }));
-      profile.innerHTML = `<p><strong>建議起始粉水比：1 : ${escapeHTML(bean.suggestedRatio)}</strong></p>
-        <p>${escapeHTML(bean.origin)}・${escapeHTML(bean.roast)}</p>
-        <p>常見風味：${escapeHTML(bean.profile)}</p>
-        <p>${escapeHTML(bean.advice)}</p>`;
+      renderBeanCard(bean);
     });
   } catch (error) {
     selector.disabled = true;
